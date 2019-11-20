@@ -19,14 +19,18 @@ width: device-width;zoom: 1;min-zoom: 0.5;max-zoom: 4;orientation: portrait;
     align-content: space-around;
     justify-content: center;
     margin: 0 auto;
+    margin-top: 10px;
 }
 
 .caixa-app{
     width: 20%;
     height: auto;
-    padding: 50px;
-    background-color: tomato;
-    border: 1px solid black;
+    padding: 25px;
+    background-color: #ce7e50;
+    border: 1px solid white;
     margin: 5px;
     text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
 }
