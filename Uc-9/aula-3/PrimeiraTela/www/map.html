@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="header">
+            <a href="javascript:history.back()">Voltar</a>
+            <a href="./tela2.html"><span>Home</span></a>
+            <p>Topo</p>
+        </div>
+
+        <div class="main map">
+            <div class="info">
+                <h1>Localização</h1>
+                <p>Procure seu destino</p>
+            </div>
+
+
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d14785.653420229115!2d-51.39998990207689!3d-22.110210183521616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgoogle%20maps!5e0!3m2!1spt-BR!2sbr!4v1574297103138!5m2!1spt-BR!2sbr" width="100%" height="500" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+
+        <div class="footer">
+            <a href="./clima.html" class="itens">Clima</a>
+            <a href="./map.html" class="itens">Map</a>
+            <a href="./videos.html" class="itens">Vídeos</a>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
