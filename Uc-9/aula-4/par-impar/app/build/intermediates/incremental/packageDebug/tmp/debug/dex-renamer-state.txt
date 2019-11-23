@@ -1,0 +1,7 @@
+#Fri Nov 22 01:57:21 BRST 2019
+base.0=C\:\\Users\\eduar\\Desktop\\Curso Senac\\Ucs-mobile\\Uc-9\\aula-4\\par-impar\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=C\:\\Users\\eduar\\Desktop\\Curso Senac\\Ucs-mobile\\Uc-9\\aula-4\\par-impar\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
