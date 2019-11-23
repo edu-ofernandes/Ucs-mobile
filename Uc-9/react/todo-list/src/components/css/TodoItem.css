@@ -1,0 +1,15 @@
+.todoItem{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow:   2px 2px 3px rgb(143, 143, 143);
+    background-color: rgb(226, 226, 226);
+    color: rgb(65, 122, 0);
+    font-size: 1.1em;
+    font-weight: bold;
+    font-style: italic;
+}
