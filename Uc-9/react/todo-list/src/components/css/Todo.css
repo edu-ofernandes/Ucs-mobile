@@ -13,9 +13,11 @@ li{list-style: none;}
     width: 100%;
     height: auto;
     margin: 0 auto;
-    padding: 10px;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     background-color: #a2a2a2;
 }
+
+.tarefas{padding: 15px;}

@@ -1,6 +1,7 @@
 .todoItem{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: auto;
     padding: 10px;
@@ -12,4 +13,10 @@
     font-size: 1.1em;
     font-weight: bold;
     font-style: italic;
+}
+
+.toggleTarefa{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }

@@ -1,0 +1,9 @@
+header{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+.item{color: white;}

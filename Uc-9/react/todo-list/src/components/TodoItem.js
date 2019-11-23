@@ -14,9 +14,10 @@ class TodoItem extends React.Component{
 
 
     render() {
+        const { id, title} = this.props.todo;
         return (
-            <li className="todoItem" style={this.getStyle()}>{this.props.todo.title}
-                <input type="checkbox" onChange={this.props.markComplete}/>
+            <li className="todoItem" style={this.getStyle()}>{title}
+                <input className="toggleTarefa" type="checkbox" onChange={this.props.markComplete.bind(this, id)}/>
             </li>
         );
     }
