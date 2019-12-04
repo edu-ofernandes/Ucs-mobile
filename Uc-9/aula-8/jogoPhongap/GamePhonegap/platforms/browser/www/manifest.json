@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "jogo",
+  "short_name": "jogo",
+  "version": "com.phonegap.helloworld",
+  "description": "Jogo feito usando phonegap, junto as do Prof Nilo, para UC 9 no curso tec info para Internet Senac 2019",
+  "author": "PhoneGap Team",
+  "icons": [],
+  "start_url": "index.html"
+}
