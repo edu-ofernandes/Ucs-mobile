@@ -6,6 +6,9 @@
     box-sizing: border-box;
 }
 
+
+
+
 body{
     width: 100%;
     height: 100%;
@@ -38,7 +41,7 @@ h2,h3{align-self: flex-start; margin: 10px 0px; font-size: 1.3em;}
     body{height: 100vh;}
 }
 @media (max-width: 600px){
-    body{font-size: 12px;}
+    body{font-size: 11px;}
 }
 /* -------------orientaçao em landscape------------------ */
 @media (orientation: landscape){
@@ -123,7 +126,8 @@ h3{
     flex-wrap: wrap;
 }
 .resposta{
-    background-color: white;
+    background-color: rgb(128, 128, 128);
+    color: white;
 }
 .conteudo img{box-shadow: 3px 3px 5px #bdbdbd; border-radius: 5px;}
 
@@ -152,3 +156,11 @@ h3{
 
 
 
+/* -------------dark------------------ */
+body.dark {filter: grayscale(1); background-color: rgb(19, 26, 39); color: white;}
+button.dark{box-shadow: 3px 3px 10px rgba(114, 114, 114, 0)}
+.comeco.dark button{box-shadow: 4px 4px 10px rgba(114, 114, 114, 0);}
+.resposta.dark{background-color: #8b8b8b;}
+h3.dark{color: rgb(255, 255, 255);}
+
+/* -------------dark------------------ */
