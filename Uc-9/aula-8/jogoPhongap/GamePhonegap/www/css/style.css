@@ -22,7 +22,7 @@ body{
 }
 
 
-button, input[type="button"], label.resposta{
+button, input[type="button"], .resposta{
     padding: 10px;
     border-radius: 5px;
     box-shadow: 3px 3px 10px #8b8b8b;
@@ -113,22 +113,20 @@ h2,h3{align-self: flex-start; margin: 10px 0px; font-size: 1.3em;}
     flex-direction: column;
     flex-grow: 2;
 }
-.conteudo input[type="checkbox"]{display: none;}
-.conteudo label{display: flex; justify-content: space-between;}
-h3{
-    color: red;
-    font-weight: 700;
-}
 .pergunta{
     width: 100%;
     display: flex; 
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.resposta{
-    background-color: rgb(128, 128, 128);
-    color: white;
+.conteudo input[type="checkbox"]{display: none;}
+.conteudo label{display: flex; justify-content: space-between;}
+h3{
+    color: red;
+    font-weight: 700;
 }
+
+
 .conteudo img{box-shadow: 3px 3px 5px #bdbdbd; border-radius: 5px;}
 
 .conteudo .certa{background-color: #1c8b18; color: white;}
@@ -158,9 +156,6 @@ h3{
 
 /* -------------dark------------------ */
 body.dark {filter: grayscale(1); background-color: rgb(19, 26, 39); color: white;}
-button.dark{box-shadow: 3px 3px 10px rgba(114, 114, 114, 0)}
-.comeco.dark button{box-shadow: 4px 4px 10px rgba(114, 114, 114, 0);}
-.resposta.dark{background-color: #8b8b8b;}
 h3.dark{color: rgb(255, 255, 255);}
 
 /* -------------dark------------------ */

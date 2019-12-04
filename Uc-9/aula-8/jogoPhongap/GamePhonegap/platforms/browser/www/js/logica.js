@@ -9,7 +9,9 @@ let acertos = [];
 let erros = [];
 
 
-
+const conteudo = document.documentElement.querySelector(".conteudo");
+const footer = document.documentElement.querySelector(".footer");
+const comeco = document.documentElement.querySelector(".comeco");
 
     
 
@@ -18,51 +20,39 @@ let erros = [];
 
 function trocarParaTelaJogo() {
     document.documentElement.querySelector(".startGame").addEventListener("click", function(){
-        const conteudo = document.documentElement.querySelector(".conteudo").classList;
-        const footer = document.documentElement.querySelector(".footer").classList;
-        if(conteudo.contains("disable") && footer.contains("disable")){
-            conteudo.add("active");
-            conteudo.remove("disable");
-            footer.add("active");
-            footer.remove("disable");
-            document.querySelector(".comeco").classList.add("disable");
+        if(conteudo.classList.contains("disable") && footer.classList.contains("disable") && comeco.classList.contains("active")){
+            conteudo.classList.remove("disable");
+            conteudo.classList.add("active");
+            
+            footer.classList.remove("disable");
+            footer.classList.add("active");
+            
+            comeco.classList.remove("active");
+            comeco.classList.add("disable");
             // startGame();
-            // temporizador();
         }
   
         
     })
 }
 
-function startGame() {
-    for (let contador = 0; contador < pergunta.length; contador++) {
-        
+function reset() {
+    if(conteudo.classList.contains("active") && footer.classList.contains("active") && comeco.classList.contains("disable")){
+        // setTimeout(function(){
+            conteudo.classList.remove("active");
+            conteudo.classList.add("disable");
+            
+            footer.classList.remove("active");
+            footer.classList.add("disable");
+            
+            comeco.classList.remove("disable");
+            comeco.classList.add("active");
+        // }, 500 )
     }
 }
 
-function temporizador(){
-    setInterval(function (){
-        tempo--;
-        if(tempo.toString().length == 1){
-            document.documentElement.querySelector("h3").innerText = "00:0"+tempo;
-        }else{
-            document.documentElement.querySelector("h3").innerText = "00:"+tempo;
-        }
-        
-    }, 1000)
 
-    
-}
-
-function reset() {
-    window.location.reload();
-}
 function darkMode() {
-
     document.documentElement.querySelector('body').classList.toggle("dark");
     document.documentElement.querySelector('h3').classList.toggle("dark");
-    
-  
-    
-
 }
