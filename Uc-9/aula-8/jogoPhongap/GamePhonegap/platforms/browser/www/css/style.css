@@ -5,25 +5,80 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #f1f1f1;
+    font-family: 'Montserrat', sans-serif;
 }
-button{
-    padding: 10px 10px;
+
+
+button, input[type="button"], label.resposta{
+    padding: 10px;
     border-radius: 5px;
-    box-shadow: 3px 3px 5px #bdbdbd;
+    box-shadow: 3px 3px 10px #8b8b8b;
     width: 100%;
     margin-top: 10px ;
     text-align: start;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.3em;
 }
-h2,h3{align-self: flex-start; margin: 10px 0px;}
+h2,h3{align-self: flex-start; margin: 10px 0px; font-size: 1.3em;}
+
+
+/* -------------Medias------------------ */
+@media (max-width: 1040px){
+    body{height: 100vh;}
+}
+@media (max-width: 600px){
+    body{font-size: 12px;}
+}
+/* -------------orientaçao em landscape------------------ */
+@media (orientation: landscape){
+    body{height: 100%;}
+    .conteudo img{width: 40% !important; height: auto; }
+}
+/* -------------/Medias------------------ */
+
+/* -------------start game------------------ */
+.comeco{
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 2;
+}
+.comeco button{
+    width: 150px;
+    height: auto;
+    padding: 20px 0px;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    background-color: #d34f11;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px #8b8b8b;
+    cursor: pointer;
+}
+
+.disable{display: none !important;}
+.active{display: flex !important;}
+/* -------------/start game------------------ */
+
+
+
+/* -------------/geral------------------ */
 
 
 
@@ -35,49 +90,65 @@ h2,h3{align-self: flex-start; margin: 10px 0px;}
     flex-direction: column;
     flex-grow: 1;
 }
+.header h2::after{
+    width: 60%;
+    height: 3px;
+    content: "";
+    display: block;
+    margin: 2px auto;
+    background-color: currentColor;
+}
+/* -------------/header------------------ */
 
 /* -------------conteudo------------------ */
 .conteudo{
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
     flex-grow: 2;
 }
-
+.conteudo input[type="checkbox"]{display: none;}
+.conteudo label{display: flex; justify-content: space-between;}
 h3{
-    font-size: 1.5em;
     color: red;
     font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
 }
 .pergunta{
     width: 100%;
     display: flex; 
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .resposta{
     background-color: white;
-    
 }
+.conteudo img{box-shadow: 3px 3px 5px #bdbdbd; border-radius: 5px;}
+
+.conteudo .certa{background-color: #1c8b18; color: white;}
+.conteudo .errada{background-color: #d31111; color: white;}
+/* -------------/conteudo------------------ */
+
 
 /* -------------footer------------------ */
 .footer{
     width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     flex-grow: 1;
 }
 .footer button{
+    width: 30%;
     color: white;
     font-weight: 700;
     text-align: center;
 }
-.footer .dark-mode{background-color: #240950;}
-.footer .confirmar{background-color: #d34f11;}
-
-
+.footer .dark-mode{background-color: #5011b6;}
+.footer .reset{background-color: #d31111;}
+.footer .confirmar{background-color: #1c8b18;}
+/* -------------/footer------------------ */
 
 
 

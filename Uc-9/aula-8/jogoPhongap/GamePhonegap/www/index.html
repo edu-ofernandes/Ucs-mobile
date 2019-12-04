@@ -7,32 +7,44 @@
 
         <link rel="stylesheet" href="./css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./fontawesome-free-5.11.2-web/css/all.min.css">
 
     </head>
     <body>
         <div class="header">
-            <h2>Nome do app</h2>
+            <h2>Questionário <i class="fas fa-question-circle"></i></h2>
         </div>
 
-        <div class="conteudo">
+        <div class="comeco">
+            <button value="Comçar" id="startGame" class="startGame">Comçar <i class="fas fa-play"></i></button>
+        </div>
+
+        <div class="conteudo disable">
             <div class="pergunta">
-                <h2>Pergunta</h2>
-                <h3>00:00</h3> 
+                <h2>1/5 - Como mudar a cor de uma div usando css?</h2>
             </div>
-            
-            <img src="./img/game.jpg" alt="imagem temporaria apenas" width="100%">
+            <h3><i class="fas fa-hourglass-start"></i>: 00:00</h3>
+            <img src="./img/game.jpg" alt="imagem temporaria apenas" width="90%">
     
            
+            <label class="resposta" for="resposta1" >backgorund-collor{...} <i class="fas fa-question"></i></label>
+            <input type="checkbox" class="resposta " id="resposta1" value="">
 
-            <button class="resposta">Resposta</button>
-            <button class="resposta">Resposta</button>  
+            <label class="resposta certa" for="resposta1" >backgorund-collor{...} <i class="fas fa-check"></i></label>
+            <input type="checkbox" class="resposta " id="resposta1" value="">
+            
+            <label class="resposta errada" for="resposta2" >backgorund-color{...} <i class="fas fa-times"></i></label> 
+            <input type="checkbox" class="resposta" id="resposta2" value="">  
+             
         </div>
 
-        <div class="footer">
-            <button onclick="executar()" class="confirmar">Reset</button>
-            <button onclick="executar()" class="dark-mode">Reset</button>
+        <div class="footer disable">
+            <button onclick="darkMode()" class="dark-mode">Dark Mode <i class="fas fa-moon"></i></button>
+            <button onclick="reset()" class="reset">Quit Game <i class="fas fa-redo"></i></button>
+            <button onclick="confirmar()" class="confirmar">Confirma <i class="fas fa-forward"></i></button>
         </div>
 
+        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="./js/logica.js"></script>
     </body>
