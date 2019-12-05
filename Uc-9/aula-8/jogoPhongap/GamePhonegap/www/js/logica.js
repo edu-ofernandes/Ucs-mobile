@@ -2,8 +2,22 @@ document.addEventListener("DOMContentLoaded", function (){
     trocarParaTelaJogo();
 });
 
-let pergunta = ["Pergunta 1?", "Pergunta 2?", "Pergunta 3?", "Pergunta 4?", "Pergunta 5?"];
-let resposta = ["Resposta 1?", "Resposta 2?", "Resposta 3?", "Resposta 4?", "Resposta 5?"];
+const perguntas = [
+{
+    pergunta: 'Pergunta 1?',
+    resposta: 'Resposta 1!'
+    },
+{
+    pergunta: 'Pergunta 2?',
+    resposta: 'Resposta 2!'
+    }, 
+{
+    pergunta: 'Pergunta 3?',
+    resposta: 'Resposta 3!'
+    }
+]
+
+
 let tempo = 20;
 let acertos = [];
 let erros = [];
@@ -13,10 +27,14 @@ const conteudo = document.documentElement.querySelector(".conteudo");
 const footer = document.documentElement.querySelector(".footer");
 const comeco = document.documentElement.querySelector(".comeco");
 
+function responder(elemento){
     
+   
+}
+const valorResppsta = document.documentElement.querySelector(".resposta").textContent;
 
-console.log(document.documentElement.querySelector(".pergunta").lastChild);
-console.log(document.documentElement.querySelector(".resposta").innerHTML=resposta[0]);
+
+
 
 
 function trocarParaTelaJogo() {
@@ -30,7 +48,6 @@ function trocarParaTelaJogo() {
             
             comeco.classList.remove("active");
             comeco.classList.add("disable");
-            // startGame();
         }
   
         
