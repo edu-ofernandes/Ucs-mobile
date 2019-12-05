@@ -15,7 +15,8 @@ const comeco = document.documentElement.querySelector(".comeco");
 
     
 
-
+console.log(document.documentElement.querySelector(".pergunta").innerHTML=pergunta[0]);
+console.log(document.documentElement.querySelector(".resposta").innerHTML=resposta[0]);
 
 
 function trocarParaTelaJogo() {
