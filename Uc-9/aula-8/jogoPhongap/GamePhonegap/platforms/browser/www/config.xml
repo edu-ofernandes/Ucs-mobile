@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>jogo</name>
+<widget id="com.phonegap.helloworld" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Jogo de perguntas</name>
     <description>
-        Jogo feito com phonegap, junto as aulas do Prof Nilo, para UC 9 no curso tec info para Internet Senac 2019
+        Jogo de perguntas feito com phonegap, junto as aulas do Prof Nilo, para UC 9 no curso tec info para Internet Senac 2019
     </description>
     <author email="eduardo123fernandes2013@hotmail.com" href="">
         PhoneGap Team
