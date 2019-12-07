@@ -38,8 +38,8 @@
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:srcCompat="@drawable/logorobo"
-                android:contentDescription="TODO" />
+                android:contentDescription="@string/logo"
+                tools:srcCompat="@drawable/logorobo" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="E-mail: make-robot@gmail.com"
+                android:text="@string/e_mail_make_robot_gmail_com"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Telefone: 0000-0000"
+                android:text="@string/telefone_0000_0000"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Nossa Localização"
+                android:text="@string/nossa_localiza_o"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
@@ -84,9 +84,23 @@
                 android:id="@+id/imageView3"
                 android:layout_width="match_parent"
                 android:layout_height="165dp"
-                android:contentDescription="imagem da localizaçao da empresa"
+                android:contentDescription="@string/imagem_da_localiza_ao_da_empresa"
                 app:srcCompat="@drawable/logorobo"
                 tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="165dp"
+                android:contentDescription="@string/imagem_da_localiza_ao_da_empresa"
+                app:srcCompat="@drawable/logorobo"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
 
         </LinearLayout>
     </ScrollView>

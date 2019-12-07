@@ -1,37 +1,38 @@
 document.addEventListener("DOMContentLoaded", function (){
     trocarParaTelaJogo();
+    
 });
 
+
+
 const perguntas = [
-{
-    pergunta: 'Pergunta 1?',
-    resposta: 'Resposta 1!'
+    {
+        pergunta: "Pergunta 1?",
+        resposta: "Resposta 1!",
+        acerto: "",
+        erro: "",
+        tempo: 5
     },
-{
-    pergunta: 'Pergunta 2?',
-    resposta: 'Resposta 2!'
-    }, 
-{
-    pergunta: 'Pergunta 3?',
-    resposta: 'Resposta 3!'
+    {
+        pergunta: "Pergunta 2?",
+        resposta: "Resposta 2!",
+        acerto: "",
+        erro: "",
+        tempo: 5
+    },
+    {
+        pergunta: "Pergunta 3?",
+        resposta: "Resposta 3!",
+        acerto: "",
+        erro: "",
+        tempo: 5
     }
 ]
-
-
-let tempo = 20;
-let acertos = [];
-let erros = [];
-
 
 const conteudo = document.documentElement.querySelector(".conteudo");
 const footer = document.documentElement.querySelector(".footer");
 const comeco = document.documentElement.querySelector(".comeco");
 
-function responder(elemento){
-    
-   
-}
-const valorResppsta = document.documentElement.querySelector(".resposta").textContent;
 
 
 
@@ -48,10 +49,31 @@ function trocarParaTelaJogo() {
             
             comeco.classList.remove("active");
             comeco.classList.add("disable");
+            startGame();
+            temporizador();
         }
   
         
     })
+}
+
+
+function startGame(){
+    for(let i = 0; i < perguntas.length; i++){
+        setInterval(function(){
+            console.log("pergunta: " + perguntas[i].pergunta)
+            document.documentElement.querySelector(".perguntah2").innerText = perguntas[i].pergunta;
+        }, perguntas[0].tempo * 1000);
+        
+    }
+    
+
+}
+
+function temporizador(){
+    setInterval(function(){
+        document.documentElement.querySelector("h3").innerHTML = '<i class="fas fa-hourglass-start"></i>: 00:0' + perguntas[0].tempo--;
+    }, 1000);
 }
 
 function reset() {

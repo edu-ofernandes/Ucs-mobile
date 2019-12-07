@@ -2,4 +2,9 @@
     <string name="app_name">makeRobot</string>
     <string name="make_robot">Make Robot</string>
     <string name="esta_uma_empresa_com_a_premissa_de_facilitar_a_compra_e_montagem_de_seu_robo">Esta é uma empresa com a premissa de facilitar a compra e montagem de seu Robo.</string>
+    <string name="e_mail_make_robot_gmail_com">E-mail: make-robot@gmail.com</string>
+    <string name="telefone_0000_0000">Telefone: 0000-0000</string>
+    <string name="nossa_localiza_o">Nossa Localização</string>
+    <string name="imagem_da_localiza_ao_da_empresa">imagem da localizaçao da empresa</string>
+    <string name="logo">logo</string>
 </resources>
