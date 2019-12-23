@@ -1,0 +1,23 @@
+[
+    {
+        "pergunta": "Pergunta 1?",
+        "resposta": "Resposta 1!",
+        "acerto": "",
+        "erro": "",
+        "tempo": 5
+    },
+    {
+        "pergunta": "Pergunta 2?",
+        "resposta": "Resposta 2!",
+        "acerto": "",
+        "erro": "",
+        "tempo": 5
+    },
+    {
+        "pergunta": "Pergunta 3?",
+        "resposta": "Resposta 3!",
+        "acerto": "",
+        "erro": "",
+        "tempo": 5
+    }
+]

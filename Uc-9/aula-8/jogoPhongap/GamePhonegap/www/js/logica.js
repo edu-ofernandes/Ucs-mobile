@@ -8,21 +8,33 @@ document.addEventListener("DOMContentLoaded", function (){
 const perguntas = [
     {
         pergunta: "Pergunta 1?",
-        resposta: "Resposta 1!",
+        resposta: [
+            {
+                todas: ["Respo Err 1 - perg 1", "Respo Err 2- perg 1", "Respo Cert - perg 1"], certa: "Respo Cert - perg 1"
+            }
+        ],
         acerto: "",
         erro: "",
         tempo: 5
     },
     {
         pergunta: "Pergunta 2?",
-        resposta: "Resposta 2!",
+        resposta: [
+            {
+                todas: ["Respo Err 1 - perg 2", "Respo Err 2- perg 2", "Respo Cert - perg 2"], certa: "Respo Cert - perg 2"
+            }
+        ],
         acerto: "",
         erro: "",
         tempo: 5
     },
     {
         pergunta: "Pergunta 3?",
-        resposta: "Resposta 3!",
+        resposta: [
+            {
+                todas: ["Respo Err 1 - perg 3", "Respo Err 2- perg 3", "Respo Cert - perg 3"], certa: "Respo Cert - perg 3"
+            }
+        ],
         acerto: "",
         erro: "",
         tempo: 5
@@ -39,7 +51,7 @@ const comeco = document.querySelector(".comeco");
 
 
 function trocarParaTelaJogo() {
-    document.documentElement.querySelector(".startGame").addEventListener("click", function(){
+    document.querySelector(".startGame").addEventListener("click", function(){
         if(conteudo.classList.contains("disable") && footer.classList.contains("disable") && comeco.classList.contains("active")){
             conteudo.classList.remove("disable");
             conteudo.classList.add("active");
@@ -49,7 +61,7 @@ function trocarParaTelaJogo() {
             
             comeco.classList.remove("active");
             comeco.classList.add("disable");
-            startGame(perguntas);
+            startGame();
             
         }
   
@@ -57,63 +69,30 @@ function trocarParaTelaJogo() {
     })
 }
 
-function questaoCorreta() {
-    document.querySelector(".resposta").addEventListener("click", function(){
-        console.log(this)
-    })
-}
 
-function trocarPerguntaResposta(i){
-    document.documentElement.querySelector(".perguntah2").innerText = perguntas[i].pergunta;
-    document.documentElement.querySelector(".resposta").innerText = perguntas[i].resposta;
 
-    questaoCorreta();
-}
+function startGame(){
 
-function startGame(perguntas){
-    // for(let i = 0; i < perguntas.length; i++){
-        let i = 0;
-        trocarPerguntaResposta(i);
-        console.log("pergunta: " + perguntas[i].pergunta)
-        console.log(i)
-        temporizador();
-        const meuIntervalo = setInterval(function(){
-            trocarPerguntaResposta(i+1);
-            console.log("pergunta: " + perguntas[i+1].pergunta)
-            console.log(i+ 1)            
-            
-            i++;
-            if(i >= perguntas.length -1){
-                clearInterval(meuIntervalo)
-                finalJogo();
-            }
-            
-        }, (perguntas[0].tempo * 1000) + 2000);
-        
-        
-    // }
+    for(let i = 0; i < perguntas.length; i++){
+        // console.log(perguntas[i].resposta[i])
+
+        const perguntaElement = `<h2 class="perguntah2">${perguntas[i].pergunta}</h2>`;
+        const respostaElement = `
+            <label class="resposta" for="resposta3" >${perguntas[i].resposta[i].todas[i]}</label>
+            <input type="checkbox" id="resposta3" value="${perguntas[i].resposta[i].todas[i]}"> `;
+
+        conteudo.insertAdjacentHTML("beforeend", respostaElement);
+        document.querySelector(".pergunta").insertAdjacentHTML("afterbegin", perguntaElement); 
+    }
+    
 
 }
 
-function temporizador(){
-    let tempo = perguntas[0].tempo ;
-    let h3Relogio = document.querySelector("h3").innerHTML = '<i class="fas fa-hourglass-start"></i>: 00:';
 
-    (tempo.toString().length < 2) ? document.querySelector("h3").innerHTML = '<i class="fas fa-hourglass-start"></i>: 00:0' + tempo :  document.querySelector("h3").innerHTML = '<i class="fas fa-hourglass-start"></i>: 00:' + tempo;
 
-    const meuTemporizador = setInterval(function(){
-        (tempo.toString().length < 2) ? document.querySelector("h3").innerHTML = '<i class="fas fa-hourglass-start"></i>: 00:0' + tempo-- :  document.querySelector("h3").innerHTML = '<i class="fas fa-hourglass-start"></i>: 00:' + tempo-- ;
-
-        if(tempo < 0){
-            clearInterval(meuTemporizador)
-            console.log("temporizador parado")
-        }
-    }, 1000);
-}
-
-function reset() {
+/*function reset() {
     if(conteudo.classList.contains("active") && footer.classList.contains("active") && comeco.classList.contains("disable")){
-        // setTimeout(function(){
+            location.reload();
             conteudo.classList.remove("active");
             conteudo.classList.add("disable");
             
@@ -122,9 +101,8 @@ function reset() {
             
             comeco.classList.remove("disable");
             comeco.classList.add("active");
-        // }, 500 )
     }
-}
+}*/
 
 
 function darkMode() {
