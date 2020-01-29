@@ -1,35 +1,67 @@
 const imagens = [
     {
         caminho : "./res/img/card.png", 
-        alt : "cards de playlists, albuns, generos de musicas etc"
+        alt : "cards de playlists, albuns, generos de musicas etc",
+        titulo: "Titulo X",
+        totalFaixas: "100 Faixas",
+        nomeAlbum: "Album ou Playlist   >",
+        nomeGenero: "Genero   "
     },
     {
         caminho : "./res/img/card.png", 
-        alt : "cards de playlists, albuns, generos de musicas etc"
+        alt : "cards de playlists, albuns, generos de musicas etc",
+        titulo: "Titulo X",
+        totalFaixas: "100 Faixas",
+        nomeAlbum: "Album ou Playlist   >",
+        nomeGenero: "Genero   "
     },
     {
         caminho : "./res/img/card.png", 
-        alt : "cards de playlists, albuns, generos de musicas etc"
+        alt : "cards de playlists, albuns, generos de musicas etc",
+        titulo: "Titulo X",
+        totalFaixas: "100 Faixas",
+        nomeAlbum: "Album ou Playlist   >",
+        nomeGenero: "Genero   "
     },
     {
         caminho : "./res/img/card.png", 
-        alt : "cards de playlists, albuns, generos de musicas etc"
+        alt : "cards de playlists, albuns, generos de musicas etc",
+        titulo: "Titulo X",
+        totalFaixas: "100 Faixas",
+        nomeAlbum: "Album ou Playlist   >",
+        nomeGenero: "Genero   "
     },
     {
         caminho : "./res/img/card.png", 
-        alt : "cards de playlists, albuns, generos de musicas etc"
+        alt : "cards de playlists, albuns, generos de musicas etc",
+        titulo: "Titulo X",
+        totalFaixas: "100 Faixas",
+        nomeAlbum: "Album ou Playlist   >",
+        nomeGenero: "Genero   "
     },
     {
         caminho : "./res/img/card.png", 
-        alt : "cards de playlists, albuns, generos de musicas etc"
+        alt : "cards de playlists, albuns, generos de musicas etc",
+        titulo: "Titulo X",
+        totalFaixas: "100 Faixas",
+        nomeAlbum: "Album ou Playlist   >",
+        nomeGenero: "Genero   "
     },
     {
         caminho : "./res/img/card.png", 
-        alt : "cards de playlists, albuns, generos de musicas etc"
+        alt : "cards de playlists, albuns, generos de musicas etc",
+        titulo: "Titulo X",
+        totalFaixas: "100 Faixas",
+        nomeAlbum: "Album ou Playlist   >",
+        nomeGenero: "Genero   >"
     },
     {
         caminho : "./res/img/card.png", 
-        alt : "cards de playlists, albuns, generos de musicas etc"
+        alt : "cards de playlists, albuns, generos de musicas etc",
+        titulo: "Titulo X",
+        totalFaixas: "100 Faixas",
+        nomeAlbum: "Album ou Playlist   >",
+        nomeGenero: "Genero   "
     },
 ];
 
@@ -42,7 +74,7 @@ function cardAlbum(data){
                 ${data.map((data) => `
                 <div class="card-item">
                     <img src="${data.caminho}"alt="${data.alt}" >
-                    <h3>Titulo</h3>
+                    <h3>${data.titulo}</h3>
                     <h4>100 Faixas</h4>
                 </div>
                 `).join('')}
