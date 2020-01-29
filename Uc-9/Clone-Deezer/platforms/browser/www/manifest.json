@@ -1,0 +1,10 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Clone deezer",
+  "short_name": "Clone deezer",
+  "version": "com.phonegap.helloworld",
+  "description": "App para estudo de interfaces, clone do app Deezer",
+  "icons": [],
+  "start_url": "index.html"
+}
