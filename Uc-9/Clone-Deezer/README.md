@@ -1,3 +1,6 @@
+# App feito para estudos de interface
+# https://www.deezer.com/br/
+
 # A Blank PhoneGap App
 
 ## Usage
