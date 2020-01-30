@@ -13,9 +13,10 @@ body{
     width: 100%;
     height: auto;
     font-family: 'Montserrat', sans-serif;
+    background-color: rgb(245, 245, 245);
 }
 
-
+/* -------------main------------------ */
 .main{
     width: 100%;
     height: auto;
@@ -30,24 +31,18 @@ body{
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding: 0px 15px;
+    padding: 0px 20px;
 }
 .container:nth-child(odd){margin-bottom: 20px;}
 .container:nth-child(even){margin-bottom: 45px;}
-
-
-
 .cards{
     width: 100%;
-    height: auto;
     height: auto;
     display: flex;
     align-content: center;
     overflow: scroll;
     padding: 20px 0px;
 }
-
 .card-item{
     width: 100%;
     height: auto;
@@ -56,9 +51,7 @@ body{
     flex-direction: column;
     justify-content: center;
 }
-
 .card-item h3, h4{margin-top: 10px;}
-
 .card-item img{
     width: 180px; 
     height: 180px; 
@@ -66,11 +59,9 @@ body{
     box-shadow: 10px 5px 20px #a1a1a1;
 }
 .card-item-genero img{height: 70px;}
-
 .card-item img:active{opacity: 0.8;}
 
-
-/* footer */
+/* -------------footer------------------ */
 .footer{
     width: 100%;
     height: auto;
