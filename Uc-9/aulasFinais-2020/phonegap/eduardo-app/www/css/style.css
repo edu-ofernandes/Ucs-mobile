@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+img{display: block;}
+li{list-style: none;}
+
+body{
+    font-size: 20px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+/*nav*/
+.nav{
+    width: 100%;
+    background-color: rgb(206, 206, 206);
+    text-align: center;
+    padding: 10px;
+}
+
+/*main*/
+.main{
+    width: 100%;
+    background-color: rgb(214, 214, 214);
+    padding: 10px;
+    padding-bottom: 50px;
+
+    flex-grow: 2;
+}
+.posts{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.posts img{
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    margin: 10px 0;
+    box-shadow: 0px 0px 10px rgb(156, 156, 156);
+}
+.tituloTxt, .usuarioTxt{font-weight: bold; font-size: 1.2em;}
+.usuarioTxt{font-style: italic;}
+.comentarioTxt{font-size: 1.1em;}
+.addComentario{
+    width: 100%;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.addComentario input{
+    width: 65%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(156, 156, 156);
+}
+.addComentario button{
+    width: 100px;
+    padding: 10px 20px;
+    background-color: tomato;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0px 0px 10px rgb(156, 156, 156);
+}
+
+
+/*nav-inferior*/
+.nav-inferior{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    padding: 10px;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+}
+.nav-inferior ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-inferior ul li{
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: tomato;
+    font-size: 1em;
+    font-weight: bold;
+}
+.nav-inferior li a{color: white;}
