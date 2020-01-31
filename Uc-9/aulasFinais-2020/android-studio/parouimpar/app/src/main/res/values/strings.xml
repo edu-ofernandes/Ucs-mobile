@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">par ou impar</string>
+    <string name="titulo_name">Verifica se numero é par ou impar</string>
+    <string name="hint_name">Insira número Positivo</string>
+    <string name="botao_name">Executar</string>
+    <string name="resposta_name">...</string>
 </resources>
