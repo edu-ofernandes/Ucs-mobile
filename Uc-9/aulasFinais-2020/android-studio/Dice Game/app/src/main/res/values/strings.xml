@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dice Game</string>
+    <string name="titulo_name">Joge o dado até acertar o 6</string>
+    <string name="altImagem_name">Dados</string>
+    <string name="botao_name">Jogar</string>
+    <string name="numeroJogadas_name">Numero de Jogadas:</string>
+    <string name="numero_name">0</string>
+</resources>
