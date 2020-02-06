@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: auto;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(233, 233, 233);
+}
+
+.header{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: teal;
+    color: white;
+}
+
+.main{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.videos{
+    width: 100%;
+    margin-bottom:25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: tomato;
+    padding: 10px;
+    box-shadow: 3px 3px 20px #a1a1a1;
+}
+.videos h2{
+    margin-bottom: 10px;
+    color: white;
+}
+.videos iframe{
+    width: 100%;
+
+}
