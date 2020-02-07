@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = findViewById(R.id.textView3);
         qtdJogadas++;
         tv.setText(String.valueOf(qtdJogadas));
+
         ImageView img;
         img = (ImageView) findViewById(R.id.imageView2);
 

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Soma numeros</string>
+    <string name="titulo_name">Digite dois numero</string>
+    <string name="resposta_name">Resposta</string>
+    <string name="botao_name">Somar</string>
+    <string name="hint2_name">Numero 2</string>
+    <string name="hint1_name">Numero 1</string>
+</resources>
