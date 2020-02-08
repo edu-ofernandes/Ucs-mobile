@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btAuditivo"
+        android:layout_width="130dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="btAuditivolClick"
+        android:text="@string/botao_auditivo_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/btResponder"
+        android:layout_width="0dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/botao_responder_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btLeitura" />
+
+    <Button
+        android:id="@+id/btLeitura"
+        android:layout_width="130dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="btLeituraClick"
+        android:text="@string/botao_leitura_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btAuditivo" />
+
+    <Button
+        android:id="@+id/btCinestesico"
+        android:layout_width="130dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:onClick="btCinestesioClick"
+        android:text="@string/botao_cinestesico_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btVisual" />
+
+    <Button
+        android:id="@+id/btVisual"
+        android:layout_width="130dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:onClick="btVisualClick"
+        android:text="@string/botao_visual_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/titulo_como_aprendo_name"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

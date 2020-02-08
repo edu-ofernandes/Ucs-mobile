@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Como eu aprendo</string>
+    <string name="titulo_visual_name">Visual</string>
+    <string name="titulo_leitura_name">Leitura</string>
+    <string name="titulo_auditivo_name">Auditivo</string>
+    <string name="titulo_cinestesico_name">Cinestésico</string>
+    <string name="titulo_como_aprendo_name">Como eu aprendo</string>
+    <string name="botao_visual_name">Visual</string>
+    <string name="botao_auditivo_name">Auditivo</string>
+    <string name="botao_cinestesico_name">Cinéstesico</string>
+    <string name="botao_leitura_name">Leitura</string>
+    <string name="botao_responder_name">Responder questões</string>
+</resources>

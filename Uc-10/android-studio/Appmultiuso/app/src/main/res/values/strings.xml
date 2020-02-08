@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">App multiuso</string>
+    <string name="botao_imc">IMC</string>
+    <string name="botao_par_impar">Par ou Impar</string>
+    <string name="botao_video">Video</string>
+    <string name="botao_sair">Sair</string>
+
+    <string name="titulo_par_impar">Verifica se numero é par ou impar</string>
+    <string name="hint_par_impar">Insira número Positivo</string>
+    <string name="botao_par_impar_exec">Executar</string>
+    <string name="resposta_par_impar">...</string>
+
+
+    <string name="titulo_imc">Verifica seu IMC</string>
+    <string name="hint_altura">Insira sua altura</string>
+    <string name="hint_peso">Insira seu peso</string>
+    <string name="resposta_imc">...</string>
+    <string name="botao_imc_exec">Executar</string>
+
+    <string name="titulo_video">Roda um video</string>
+    <string name="botao_video_play">Play</string>
+</resources>
