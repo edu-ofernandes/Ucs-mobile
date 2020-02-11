@@ -67,7 +67,7 @@ const imagens = [
 
 function cardAlbum(data) {
   return (`
-        ${data.map( (elemnt, index) => `
+        ${data.map((elemnt, index) => `
         <div class="container container-album">
             <h2>${data[index].titulo}</h2>
             <div class="cards">
