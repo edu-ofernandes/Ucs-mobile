@@ -1,0 +1,22 @@
+{
+  "liveServer.settings.donotShowInfoMsg": true,
+  "explorer.confirmDelete": false,
+  "editor.wordWrap": "on",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.zoomLevel": 0,
+  "editor.detectIndentation": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "workbench.colorTheme": "Dracula",
+}
