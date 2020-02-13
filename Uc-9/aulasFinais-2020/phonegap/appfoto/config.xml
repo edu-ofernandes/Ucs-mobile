@@ -7,10 +7,43 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
-    <content src="index.html" />
-    <access origin="*" />
-    <allow-intent href="camera:**" />
-    <preference name="android-miSdkVersion" value="22"/>
-    <plugin name="cordova-plugin-camera" soruce="npm" spec="~2.3.1"/>
-    <plugin name="cordova-plugin-whitelist" soruce="npm" spec="~1.3.4"/>
+    <preference name="permissions" value="none"/>
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="android-minSdkVersion" value="22" />
+  <content src="index.html" />
+	
+<plugin name="cordova-plugin-battery-status" source="npm" spec="~2.0.3" />
+<plugin name="cordova-plugin-camera" source="npm" spec="~2.3.1" />
+<plugin name="cordova-plugin-console" source="npm" spec="~1.1.0" />
+<plugin name="cordova-plugin-contacts" source="npm" spec="~2.3.1" />
+<plugin name="cordova-plugin-device" source="npm" spec="~2.0.3" />
+<plugin name="cordova-plugin-dialogs" source="npm" spec="~2.0.2" />
+<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.3.4" />
+
+  <access origin="*" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="sms:*" />
+  <allow-intent href="mailto:*" />
+  <allow-intent href="geo:*" />
+  <allow-intent href="camera:*" />
+  <allow-intent href="market:*" />
+	
+  <platform name="android">
+    <allow-intent href="market:*" />
+
+  </platform>
+
+  <platform name="ios">
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
+    <preference name="BackupWebStorage" value="none" />
+    <feature name="Camera">
+      <param name="ios-package" value="CDVCamera" />
+    </feature>
+  </platform>
+<feature name="Camera">
+<param name="android-package" value="org.apache.cordova.CameraLauncher" />
+</feature>
 </widget>

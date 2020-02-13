@@ -12,6 +12,21 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.phonegap.appfoto"
+        },
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.phonegap.appfoto"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.phonegap.appfoto"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.phonegap.appfoto"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.phonegap.appfoto"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.phonegap.appfoto"
         }
     },
     "dependent_plugins": {
