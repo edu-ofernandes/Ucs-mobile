@@ -1,104 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-tap-highlight" content="no"> -->
     <title>My App</title>
-    <link rel="stylesheet" href="css/styles.css">
-	<script>
-	var app = {
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
-    onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-    },
-    receivedEvent: function(id) {
-        console.log('Received Event: ' + id);
-    },
-    capturePhoto: function() {
-        alert('clicou em bater foto!');
-        navigator.camera.getPicture(this.onSuccess, this.onFail, {
-            quality: 60,
-            destinationType: Camera.DestinationType.DATA_URL,
-            allowEdit: true,
-			
-            sourceType: 1,      // 0:Photo Library, 1=Camera, 2=Saved Album
-            encodingType: 0     // 0=JPG 1=PNG
-			
-        });
-    },
-    onSuccess: function(imageData) {
-        var image = document.getElementById('myImage');
-         image.style.display = "block";
-         image.src = "data:image/jpeg;base64," + imageData;
-        alert('success');
-    },
-    onFail: function(message) {
-        alert('Fail: ' + message);
-    }
-};
-	</script>
-	
+    <link rel="stylesheet" href="./css/style.css">
+
+
 </head>
 
 <body>
-    <div class="statusbar-overlay"></div>
-
-   <div class="panel-overlay"></div>
-    <div class="panel panel-left panel-reveal">
-        <div class="content-block">
-            <p>Left panel content goes here</p>
+    <div class="container">
+        <div>
+            <h5>Imagem</h5>
+            <img width="200px" id="myImage" src="">
         </div>
-    </div>
-
-    <div class="views">
-       <div class="view view-main">
-            <!-- Top Navbar-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Awesome App</div>
-                    <div class="right">
-                        
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="pages navbar-through toolbar-through">
-                <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
-                    <!-- Scrollable page content -->
-                    <div class="page-content">
-                        <div class="content-block">
-                            <p>Page content goes here</p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About app</a>
-							<button><a href="#" onClick="app.capturePhoto();">Tirar foto</a></button>
-							<div><img style="display:none; width:120px; height:120px;" id="myImage" src="" /></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Link 1</a>
-                    <a href="#" class="link">Link 2</a>
-                </div>
-            </div>
-        </div>
+        <button onClick="app.capturePhoto();">Tirar foto</button>
     </div>
 
 
-	
-	<script type="text/javascript" src="cordova.js"></script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script>
+        var app = {
+            initialize: function () {
+                document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+            },
+            onDeviceReady: function () {
+                this.receivedEvent('deviceready');
+            },
+            receivedEvent: function (id) {
+                console.log('Received Event: ' + id);
+            },
+            capturePhoto: function () {
+                alert('clicou em bater foto!');
+                navigator.camera.getPicture(this.onSuccess, this.onFail, {
+                    quality: 60,
+                    destinationType: Camera.DestinationType.DATA_URL,
+                    allowEdit: false,
+
+                    sourceType: 1,      // 0:Photo Library, 1=Camera, 2=Saved Album
+                    encodingType: 0     // 0=JPG 1=PNG
+
+                });
+            },
+            onSuccess: function (imageData) {
+                var image = document.getElementById('myImage');
+                image.style.height = "auto";
+                image.style.width = "auto";
+                image.src = "data:image/jpeg;base64," + imageData;
+                alert('success');
+            },
+            onFail: function (message) {
+                alert('Fail: ' + message);
+            }
+        };
+    </script>
 </body>
 
 </html>

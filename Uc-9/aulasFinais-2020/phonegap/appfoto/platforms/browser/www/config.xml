@@ -15,6 +15,15 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
     <allow-intent href="camera:*" />
-    <preference name="android-miSdkVersion" value="22" />
+    <allow-intent href="market:*" />
+    <preference name="permissions" value="none" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="22" />
 </widget>
