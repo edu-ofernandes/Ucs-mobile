@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     public void btResponderClick(View v){
         Intent responderIntent = new Intent(getApplicationContext(), MeuEstiloActivity.class);
         startActivity(responderIntent);

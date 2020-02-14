@@ -22,9 +22,9 @@
     <Button
         android:id="@+id/btResponder"
         android:layout_width="0dp"
-        android:layout_height="108dp"
+        android:layout_height="70dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:onClick="btResponderClick"
         android:text="@string/botao_responder_name"
@@ -34,10 +34,23 @@
         app:layout_constraintTop_toBottomOf="@+id/btLeitura" />
 
     <Button
+        android:id="@+id/btRegras"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/botao_regras_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btResponder" />
+
+    <Button
         android:id="@+id/btLeitura"
         android:layout_width="130dp"
         android:layout_height="108dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:onClick="btLeituraClick"
         android:text="@string/botao_leitura_name"
@@ -51,7 +64,7 @@
         android:layout_width="130dp"
         android:layout_height="108dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:onClick="btCinestesioClick"
         android:text="@string/botao_cinestesico_name"
         app:layout_constraintEnd_toStartOf="@+id/btLeitura"
@@ -77,20 +90,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:text="@string/titulo_como_aprendo_name"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="37dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
