@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*public void btResponderClick(){
-        Intent responderIntent = new Intent(getApplicationContext(), .class);
+    public void btResponderClick(View v){
+        Intent responderIntent = new Intent(getApplicationContext(), MeuEstiloActivity.class);
         startActivity(responderIntent);
-    }*/
+    }
 
     public void btVisualClick(View v){
         Intent visualIntent = new Intent(getApplicationContext(), EstiloVisualActivity.class);

@@ -1,0 +1,28 @@
+auditivo:
+-Você é bom ouvinte. 1
+-Você cantarola ou canta em voz alta frequência. 4
+-Você é um bom comunicador. 10
+-Você costuma associar memórias com música. 17
+-Você ouve música enquanto cozinha ou estuda. 21
+
+leitura escrita:
+-Você lê tudo o que você tem na frente, desde jornais a caixas de cereais. 2
+-Você possui um vocabulário amplo. 5
+-Muitas vezes, você rabisca quando tem caneta e papel à mão. 6 
+-Você usa exemplos específicos quando expõe seus pontos de vista. 8
+-Você consegue facilmente expressar o que está pensando. 11
+
+cinestesico:
+-Você é cheio de energia, fisicamente ativo (pratica atividades físicas regularmente). 3
+-Você usa as mãos para falar. 13
+-Você gosta de estar sozinho quando se dedica a algum hobby. 14
+-Você tem ciência de seus pontos fortes e fracos. 16
+-Você gosta de atividades físicas, tais como jardinagem ou construção. 19
+
+visual:
+-Você aprecia realizar atividades em grupo, como jogos de tabuleiro. 7
+-Você tem um bom senso de direção quando viaja. 9
+-Você organiza suas atividades usando listas de tarefas pendentes. 12
+-Você fica animado ao realizar orçamentos e metas financeiras. 15
+-Você se sente revigorado quando tem um tempo sozinho. 18
+-Você entende melhor as coisas com imagens ou diagramas. 20
