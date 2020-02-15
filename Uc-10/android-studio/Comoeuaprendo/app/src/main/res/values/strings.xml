@@ -11,10 +11,9 @@
     <string name="botao_leitura_name">Leitura</string>
     <string name="botao_responder_name">Responder questões</string>
     <string name="botao_regras_name">Regras do questinário</string>
-    <string name="botao_respostas_nao">Não</string>
-    <string name="botao_respostas_raramente">Raramente</string>
     <string name="botao_respostas_identifico">Me identifico</string>
-    <string name="botao_respostas_identifico_muito">Me identifico muito</string>
+    <string name="botao_respostas_nao_identifico">Nao me identifico</string>
     <string name="titulo_enunciado_name">Enunciado</string>
+    <string name="botao_reiniciar_name">Reiniciar Questionário</string>
 
 </resources>

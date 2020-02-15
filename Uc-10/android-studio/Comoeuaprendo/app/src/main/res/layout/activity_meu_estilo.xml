@@ -20,55 +20,59 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btIdentificoMuito"
+        android:id="@+id/btNaoIdentifico"
         android:layout_width="120dp"
         android:layout_height="100dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="30dp"
-        android:onClick="responder"
-        android:text="@string/botao_respostas_identifico_muito"
+        android:onClick="btResponder"
+        android:text="@string/botao_respostas_nao_identifico"
         app:layout_constraintBottom_toBottomOf="@+id/btIdentifico"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btIdentifico"
         app:layout_constraintTop_toTopOf="@+id/btIdentifico"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btIdentifico"
         android:layout_width="120dp"
         android:layout_height="100dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:onClick="responder"
+        android:layout_marginTop="120dp"
+        android:onClick="btResponder"
         android:text="@string/botao_respostas_identifico"
-        app:layout_constraintEnd_toStartOf="@+id/btIdentificoMuito"
+        app:layout_constraintEnd_toStartOf="@+id/btNaoIdentifico"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btNao" />
+        app:layout_constraintTop_toBottomOf="@+id/tvResposta" />
 
     <Button
-        android:id="@+id/btNao"
-        android:layout_width="120dp"
+        android:id="@+id/btReiniciar"
+        android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="120dp"
-        android:onClick="responder"
-        android:text="@string/botao_respostas_nao"
-        app:layout_constraintEnd_toStartOf="@+id/btRaramente"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="150dp"
+        android:onClick="btReiniciar"
+        android:text="@string/botao_reiniciar_name"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvResposta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEnunciado" />
 
-    <Button
-        android:id="@+id/btRaramente"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="30dp"
-        android:onClick="responder"
-        android:text="@string/botao_respostas_raramente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btNao"
-        app:layout_constraintTop_toBottomOf="@+id/tvEnunciado" />
 </androidx.constraintlayout.widget.ConstraintLayout>
