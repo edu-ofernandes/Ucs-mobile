@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btReset;
     private Drawable img;
     private String[] msg;
+    private boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         tvResult = findViewById(R.id.tvResult);
         tvTitulo = findViewById(R.id.tvTitulo);
         btReset = findViewById(R.id.btReset);
+        flag = true;
         geraMensagens();
 
         giroscopio = new Giroscopio(this);
@@ -44,10 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
                 i++;
                 if ((rx > 1.0f && rx > -1.0f) || (ry > 1.0f && ry > -1.0f) || (rz > 1.0f && rz > -1.0f) ){
-                    img = getResources().getDrawable(R.drawable.mafic8ballfrente);
-                    ivFoto.setImageDrawable(img);
 
-                    if(i > 0) {
+                    if(i > 20 && flag) {
                         img = getResources().getDrawable(R.drawable.magi8ballverso);
                         ivFoto.setImageDrawable(img);
                         tvResult.setVisibility(View.VISIBLE);
@@ -56,12 +56,11 @@ public class MainActivity extends AppCompatActivity {
                         tvTitulo.setVisibility(View.INVISIBLE);
                         btReset.setVisibility(View.VISIBLE);
 
+                        flag = false;
                     }
 
 
-                }/*else if(rx < -1.0f){
-
-                }*/
+                }
             }
         });
 
@@ -92,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
         tvResult.setVisibility(View.INVISIBLE);
         tvTitulo.setVisibility(View.VISIBLE);
         btReset.setVisibility(View.INVISIBLE);
+
+        flag = true;
     }
 
     public void geraMensagens() {

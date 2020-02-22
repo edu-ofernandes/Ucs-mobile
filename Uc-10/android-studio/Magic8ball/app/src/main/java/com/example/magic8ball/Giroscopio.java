@@ -11,12 +11,11 @@ public class Giroscopio {
     private SensorManager sensorManager;
     private Sensor sensor;
     private SensorEventListener sensorEventListener;
+    private Listener listener;
 
     public interface Listener{
         void OnRotation(float rx, float ry, float rz);
     }
-
-    private Listener listener;
 
     public void setListener(Listener l){
         listener = l;
@@ -43,10 +42,6 @@ public class Giroscopio {
 
     public void register(){
         sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
-    }
-
-    public void unregister(){
-        sensorManager.unregisterListener(sensorEventListener);
     }
 
 }
