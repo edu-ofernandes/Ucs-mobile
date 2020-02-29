@@ -4,13 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private ArrayList<Pokemon> dadosPoke;
@@ -32,6 +32,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String nome = dadosPoke.get(position).getNome();
         holder.nome.setText(nome);
+        String descricao = dadosPoke.get(position).getDescricao();
+        holder.descricao.setText(descricao);
+        int foto = dadosPoke.get(position).getFoto();
+        holder.foto.setImageResource(foto);
     }
 
     @Override
@@ -44,10 +48,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         TextView nome;
         TextView descricao;
+        ImageView foto;
 
-        public ViewHolder(@NonNull View nomeView) {
-            super(nomeView);
-            nome = nomeView.findViewById(R.id.tvNome);
+        public ViewHolder(@NonNull View view) {
+            super(view);
+            nome = view.findViewById(R.id.tvNome);
+            descricao = view.findViewById(R.id.tvDescricao);
+            foto = view.findViewById(R.id.ivPoke);
 
         }
     }

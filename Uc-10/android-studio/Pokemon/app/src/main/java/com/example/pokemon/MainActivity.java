@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
             " cresce progressivamente maior.", R.drawable.bulbasauro));
 
         arrayPoke.add(new Pokemon("Charizard", "Charizard voa pelo céu em busca de" +
-            " oponentes poderosos. Respira fogo de tanto calor que derrete qualquer coisa. No" +
-            " entanto, nunca dá um sopro ardente a qualquer oponente mais fraco que ele.",
+            " oponentes poderosos. Respira fogo de tanto calor que derrete qualquer coisa.",
             R.drawable.charizard));
 
         return arrayPoke;
