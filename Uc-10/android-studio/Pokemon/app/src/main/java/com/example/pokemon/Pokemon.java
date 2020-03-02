@@ -1,6 +1,9 @@
 package com.example.pokemon;
 
-public class Pokemon {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Pokemon implements Parcelable {
 
     private String nome;
     private String descricao;
@@ -11,6 +14,24 @@ public class Pokemon {
         this.setFoto(foto);
         this.setNome(nome);
     }
+
+    protected Pokemon(Parcel in) {
+        nome = in.readString();
+        descricao = in.readString();
+        foto = in.readInt();
+    }
+
+    public static final Creator<Pokemon> CREATOR = new Creator<Pokemon>() {
+        @Override
+        public Pokemon createFromParcel(Parcel in) {
+            return new Pokemon(in);
+        }
+
+        @Override
+        public Pokemon[] newArray(int size) {
+            return new Pokemon[size];
+        }
+    };
 
     public String getNome() {
         return nome;
@@ -34,5 +55,17 @@ public class Pokemon {
 
     public void setFoto(int foto) {
         this.foto = foto;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nome);
+        dest.writeString(descricao);
+        dest.writeInt(foto);
     }
 }
