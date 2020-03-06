@@ -49,11 +49,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 
     @Override
     public void onClickPoke(int position) {
-        Intent intent = new Intent(this, InformacoesActivity.class);
-        String nome = arrayPoke.get(position).getNome();
-        String desc = arrayPoke.get(position).getDescricao();
-        intent.putExtra("nome", nome);
-        intent.putExtra("desc", desc);
-        startActivity(intent);
+
     }
 }

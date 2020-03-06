@@ -18,21 +18,20 @@ import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private ArrayList<Pokemon> dadosPoke;
     private LayoutInflater minflate;
+    private OnListenerPoke onMListenerPoke;
     private Context context;
-    private OnListenerPoke onListenerPoke;
 
     RecyclerViewAdapter(Context context, ArrayList<Pokemon> dado, OnListenerPoke onListenerPoke){
-        this.minflate = LayoutInflater.from(context);
         this.dadosPoke = dado;
+        this.onMListenerPoke = onListenerPoke;
         this.context = context;
-        this.onListenerPoke = onListenerPoke;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = minflate.inflate(R.layout.pokemon, parent, false);
-        return new ViewHolder(view, onListenerPoke);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pokemon, parent, false);
+        return new ViewHolder(view, onMListenerPoke);
     }
 
     @Override
@@ -40,6 +39,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.nome.setText(dadosPoke.get(position).getNome());
         holder.descricao.setText(dadosPoke.get(position).getDescricao());
         holder.foto.setImageResource(dadosPoke.get(position).getFoto());
+
+        holder.btInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, InformacoesActivity.class);
+                String nome = dadosPoke.get(position).getNome();
+                String desc = dadosPoke.get(position).getDescricao();
+                intent.putExtra("nome", "nome");
+                intent.putExtra("desc", "desc");
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -70,6 +81,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         @Override
         public void onClick(View v) {
+           // this.
+//            int i = getAdapterPosition();
             onListenerPoke.onClickPoke(getAdapterPosition());
         }
     }

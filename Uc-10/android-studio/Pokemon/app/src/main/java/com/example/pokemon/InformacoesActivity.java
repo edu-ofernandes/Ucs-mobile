@@ -11,9 +11,6 @@ public class InformacoesActivity extends AppCompatActivity {
   ImageView ivInfoFoto;
   TextView tvInfoNome, tvInfoDescricao;
 
-  String infoNome, infoDescricao;
-  int infoFoto;
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -23,21 +20,16 @@ public class InformacoesActivity extends AppCompatActivity {
     tvInfoNome = findViewById(R.id.tvInfoNome);
     tvInfoDescricao = findViewById(R.id.tvDescricao);
 
-//    getDado();
-//    setDado();
+
+    String data1 = getIntent().getExtras().getString("nome");
+    String data2 = getIntent().getExtras().getString("desc");
+
+    tvInfoNome.setText(data1);
+    tvInfoDescricao.setText(data2);
   }
 
-  private void getDado(){
-    if (getIntent().hasExtra("nome") && getIntent().hasExtra("desc")) {
 
-      this.infoNome = getIntent().getParcelableExtra("nome");
-      this.infoDescricao = getIntent().getParcelableExtra("desc");
 
-    }
-  }
 
-  private void setDado(){
-    tvInfoNome.setText(infoNome);
-    tvInfoDescricao.setText(infoDescricao);
-  }
+
 }
