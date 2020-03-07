@@ -20,12 +20,12 @@ import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private ArrayList<Pokemon> dadosPoke;
     private LayoutInflater minflate;
-    //private OnListenerPoke onMListenerPoke;
+    private OnListenerPoke onMListenerPoke;
     private Context context;
 
-    RecyclerViewAdapter(Context context, ArrayList<Pokemon> dado){
+    public RecyclerViewAdapter(Context context, ArrayList<Pokemon> dado, OnListenerPoke onListenerPoke){
         this.dadosPoke = dado;
-        //this.onMListenerPoke = onListenerPoke;
+        this.onMListenerPoke = onListenerPoke;
         this.context = context;
     }
 
@@ -33,7 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pokemon, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, onMListenerPoke);
     }
 
     @Override
@@ -47,16 +47,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.descricao.setText(desc);
         holder.foto.setImageResource(foto);
 
-        holder.btInfo.setOnClickListener(new View.OnClickListener() {
+        /*holder.btInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, InformacoesActivity.class);
 
                 intent.putExtra("pokemon", ( Parcelable) dadosPoke.get(position));
                 context.startActivity(intent);
-//                Toast.makeText(context, holder.nome.getText(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, holder.nome.getText(), Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 
     @Override
@@ -65,36 +65,34 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView nome;
         TextView descricao;
         ImageView foto;
 
         Button btInfo;
-        //OnListenerPoke onListenerPoke;
+        OnListenerPoke onListenerPoke;
 
-        public ViewHolder(@NonNull View view) {
+        public ViewHolder(@NonNull View view, OnListenerPoke onListenerPoke) {
             super(view);
             nome = view.findViewById(R.id.tvNome);
             descricao = view.findViewById(R.id.tvDescricao);
             foto = view.findViewById(R.id.ivPoke);
             btInfo = view.findViewById(R.id.btInfo);
 
-//            this.onListenerPoke = onListenerPoke;
-//            btInfo.setOnClickListener(this);
+            this.onListenerPoke = onListenerPoke;
+            btInfo.setOnClickListener(this);
         }
 
-        /*@Override
+        @Override
         public void onClick(View v) {
-           // this.
-//            int i = getAdapterPosition();
             onListenerPoke.onClickPoke(getAdapterPosition());
-        }*/
+        }
     }
 
-   /* public interface OnListenerPoke{
+   public interface OnListenerPoke{
         void onClickPoke(int position);
-    }*/
+    }
 
 }

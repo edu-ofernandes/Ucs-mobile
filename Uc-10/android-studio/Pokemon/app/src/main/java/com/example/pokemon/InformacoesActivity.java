@@ -22,7 +22,7 @@ public class InformacoesActivity extends AppCompatActivity {
     tvInfoDescricao = findViewById(R.id.tvInfoDescricao);
 
 
-    Pokemon pokemonData = (Pokemon) getIntent().getExtras().getParcelable("pokemon");
+    Pokemon pokemonData = getIntent().getExtras().getParcelable("pokemon");
 
     tvInfoNome.setText(pokemonData.getNome());
     ivInfoFoto.setImageResource(pokemonData.getFoto());
