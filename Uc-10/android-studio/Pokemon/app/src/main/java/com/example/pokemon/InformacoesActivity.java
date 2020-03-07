@@ -9,7 +9,8 @@ import android.widget.TextView;
 public class InformacoesActivity extends AppCompatActivity {
 
   ImageView ivInfoFoto;
-  TextView tvInfoNome, tvInfoDescricao;
+  TextView tvInfoNome;
+  TextView  tvInfoDescricao;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +19,14 @@ public class InformacoesActivity extends AppCompatActivity {
 
     ivInfoFoto = findViewById(R.id.ivInfoFoto);
     tvInfoNome = findViewById(R.id.tvInfoNome);
-    tvInfoDescricao = findViewById(R.id.tvDescricao);
+    tvInfoDescricao = findViewById(R.id.tvInfoDescricao);
 
 
-    String data1 = getIntent().getExtras().getString("nome");
-    String data2 = getIntent().getExtras().getString("desc");
+    Pokemon pokemonData = (Pokemon) getIntent().getExtras().getParcelable("pokemon");
 
-    tvInfoNome.setText(data1);
-    tvInfoDescricao.setText(data2);
+    tvInfoNome.setText(pokemonData.getNome());
+    ivInfoFoto.setImageResource(pokemonData.getFoto());
+    tvInfoDescricao.setText(pokemonData.getDescricao());
   }
 
 

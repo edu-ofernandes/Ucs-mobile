@@ -9,7 +9,7 @@ public class Pokemon implements Parcelable {
     private String descricao;
     private int foto;
 
-    public Pokemon(String nome, String descricao, int foto){
+    Pokemon(String nome, String descricao, int foto){
         this.setDescricao(descricao);
         this.setFoto(foto);
         this.setNome(nome);
@@ -34,7 +34,7 @@ public class Pokemon implements Parcelable {
     };
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {
@@ -42,7 +42,7 @@ public class Pokemon implements Parcelable {
     }
 
     public String getDescricao() {
-        return descricao;
+        return this.descricao;
     }
 
     public void setDescricao(String descricao) {
@@ -50,7 +50,7 @@ public class Pokemon implements Parcelable {
     }
 
     public int getFoto() {
-        return foto;
+        return this.foto;
     }
 
     public void setFoto(int foto) {

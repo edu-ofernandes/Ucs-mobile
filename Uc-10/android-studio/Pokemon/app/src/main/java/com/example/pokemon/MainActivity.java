@@ -9,7 +9,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements RecyclerViewAdapter.OnListenerPoke {
+public class MainActivity extends AppCompatActivity  {
 
     private ArrayList<Pokemon> arrayPoke;
     RecyclerViewAdapter adapter;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 
         RecyclerView recyclerView = findViewById(R.id.rvPoke);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new RecyclerViewAdapter(this, arrayPoke, this);
+        adapter = new RecyclerViewAdapter(this, arrayPoke);
         recyclerView.setAdapter(adapter);
     }
 
@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
             " foes using its sharp claws.", R.drawable.charmeleon));
     }
 
-    @Override
+    /*@Override
     public void onClickPoke(int position) {
 
-    }
+    }*/
 }
