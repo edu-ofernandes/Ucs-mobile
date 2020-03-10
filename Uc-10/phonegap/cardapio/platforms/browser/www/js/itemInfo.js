@@ -1,6 +1,3 @@
-const btnPedido = document.querySelectorAll('.itens .info .btnMain');
-const itensHtml = document.querySelectorAll('.itens');
-
 const lanche = [
   {
     nome: "Nome da comida1",
@@ -122,22 +119,46 @@ const lanche = [
     id: 15,
     estoque: 10
   },
-];
+],
+  itemHtml = document.querySelector('.item'),
+  nomePedido = itemHtml.querySelector('.info-item h3'),
+  precoPedido = itemHtml.querySelector('.info-item h4'),
+  descricaoPedido = itemHtml.querySelector('.info-item h5'),
+  fotoPedido = itemHtml.querySelector('img'),
+  btnAddPedido = itemHtml.querySelector('.info-item .botoes button'),
+  qtdPedidoHtml = itemHtml.querySelector('.info-item .botoes .qtd h3'),
+  plusPedido = itemHtml.querySelector('.info-item .botoes .qtd .fa-plus'),
+  minusPedido = itemHtml.querySelector('.info-item .botoes .qtd .fa-minus');
 
-itensHtml.forEach((item, index) => {
-  let imgHtml = item.querySelector('img');
-  let h3Html = item.querySelector('h3');
-  let h5Html = item.querySelector('h5');
+let idLanche = window.location.href.split('=');
+idLanche = + parseInt(idLanche[1] - 1);
+const pedido = lanche[idLanche];
+const qtdTotal = lanche[idLanche].estoque;
+let qtdPedido = 0;
+
+nomePedido.insertAdjacentText('afterbegin', pedido.nome);
+descricaoPedido.insertAdjacentText('afterbegin', pedido.descricao);
+precoPedido.insertAdjacentText('beforeend', pedido.preco);
+fotoPedido.setAttribute('src', pedido.foto[0]);
+btnAddPedido.insertAdjacentText('beforeend', pedido.preco);
+qtdPedidoHtml.innerHTML = qtdPedido;
 
 
-  imgHtml.setAttribute('src', lanche[index].foto[0]);
-  h3Html.insertAdjacentText('afterbegin', lanche[index].nome);
-  h5Html.insertAdjacentText('afterbegin', lanche[index].descricao);
-  btnPedido[index].setAttribute('data-idLanche', lanche[index].id);
-});
-
-function irParaPedido(e) {
-  window.location.assign('itemInfo.html?id=' + e.getAttribute('data-idLanche'));
+function minus() {
+  if (qtdPedido === 0) {
+    alert('nao tem mais pedidos')
+  } else {
+    qtdPedido -= 1;
+    qtdPedidoHtml.innerHTML = qtdPedido;
+  }
 }
+function plus() {
+  if (qtdPedido < qtdTotal) {
+    qtdPedido += 1;
+    qtdPedidoHtml.innerHTML = qtdPedido;
+  } else {
+    alert('limite de estoque');
+  }
 
+}
 

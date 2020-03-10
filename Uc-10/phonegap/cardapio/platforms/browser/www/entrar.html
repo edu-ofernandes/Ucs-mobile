@@ -12,13 +12,19 @@
 
 <body>
 
-  <div class="container container-entrar">
+  <div class="container container-entrar-cadastrar">
+    <form id="logar" action="#" method="GET">
+      <h1>Entrar</h1>
+      <input type="email" placeholder="E-mail:" required>
+      <input type="password" placeholder="Senha:" required>
+      <button type="submit" class="entrar">Entrar</button>
+      <button type="button" class="voltar" onclick="window.location.assign('index.html');">Voltar</button>
+      <p><a href="cadastrar.html">Cadastrar</a></p>
+    </form>`
   </div>
 
   <!-- <script type="text/javascript" src="cordova.js"></script> -->
   <script src="./js/entrar.js" type="text/javascript"></script>
-  <!-- <script src="./js/main.js" type="text/javascript"></script> -->
-  <!-- <script src="./js/splash.js" type="text/javascript"></script> -->
 </body>
 
 </html>
