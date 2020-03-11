@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  background-color: #202020;
+}
+
+button, input, textarea {
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 65px;
+}
+
+.header {
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.header p {
+  text-align: center;
+  padding: 10px 0px;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.tarefas {
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.tarefas .tarefa {
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.tarefas .tarefa p {
+  margin: 10px 0px;
+  padding: 5px 5px;
+  border-bottom: 2px solid #202020;
+  color: #202020;
+}
+
+.tarefas .tarefa p#nomeTarefa {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.tarefas .tarefa .botoes {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.tarefas .tarefa .botoes button:first-child {
+  margin-right: 10px;
+}
+
+form#criar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 20px;
+  background-color: #202020;
+}
+
+form#criar input, form#criar textarea, form#criar button {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+form#criar input:focus, form#criar textarea:focus {
+  background-color: #fff;
+}
+
+form#criar button#addTarefa {
+  background-color: tomato;
+  color: #fff;
+}
+
+form#criar button#addTarefa:active {
+  background-color: rgb(223, 94, 71);
+}
+
+form#criar input, textarea {
+  background-color: rgb(245, 245, 245);
+}
+
+#alterar {
+  background-color: rgb(221, 144, 56);
+  color: rgb(255, 255, 255);
+}
+
+#deletar {
+  background-color: rgb(231, 62, 62);
+  color: rgb(255, 255, 255);
+}
+
+#deletar, #alterar {
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 1.1em;
+}
