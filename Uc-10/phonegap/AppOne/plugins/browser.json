@@ -1,0 +1,73 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "appOne"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "appOne"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "appOne"
+        }
+    }
+}

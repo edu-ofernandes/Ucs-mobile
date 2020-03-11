@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>Os lugares de prudente</h3>
+    <div id="lugares">
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            text-align: center;
+            padding: 10px;
+            background-color: tomato;
+        }
+
+        #lugares {
+            width: 100%;
+            height: 100vh;
+            background-color: #202020;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .item {
+            width: 100%;
+            display: flex;
+            background-color: rgb(255, 255, 255);
+            margin-bottom: 20px;
+            padding: 25px 5px 0px 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item P {
+            margin-bottom: 10px;
+            border-bottom: 2px solid tomato;
+        }
+    </style>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCPsDNQctgEfVY0k_gaThvf5vED2ejkOPo",
+            authDomain: "projectone-f70a6.firebaseapp.com",
+            databaseURL: "https://projectone-f70a6.firebaseio.com",
+            projectId: "projectone-f70a6",
+            storageBucket: "projectone-f70a6.appspot.com",
+            messagingSenderId: "2808385825",
+            appId: "1:2808385825:web:0ccdba21a2eca9b6c72e60"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        var ulLugares = document.getElementById('lugares');
+        firebase.database().ref('lugares').on('value', function (res) {
+            ulLugares.innerHTML = '';
+            res.forEach((element, index) => {
+
+                var nome = element.val().nome;
+                var latitude = element.val().latitude;
+                var longitude = element.val().longitude;
+
+                var html = `
+                    <div class="item">
+                        <p><strong>Nome:</strong> ${nome}</p>
+                        <p><strong>Latitude:</strong> ${latitude}</p>
+                        <p><strong>Longitude:</strong> ${longitude}</p>
+                    </div>
+                    
+                `;
+                ulLugares.insertAdjacentHTML('afterbegin', html);
+
+                /*var li = document.createElement('li');
+                li.appendChild(document.createTextNode('nome: ' + element.val().nome + ': . Longitude: ' + element.val().longitude + '. Latitude: ' + element.val().latitude));
+                ulLugares.appendChild(li);*/
+            });
+        })
+    </script>
+
+</body>
+
+</html>

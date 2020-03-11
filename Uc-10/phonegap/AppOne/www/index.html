@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+</head>
+
+<body>
+    <h1>Acessando dados</h1>
+    <ul id="userList"></ul>
+    <a href="./index2.html">Lugares</a>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB-Wsm6OeRwEjXn8sM91yK0ln-c_XNpwgI",
+            authDomain: "elequipe.firebaseapp.com",
+            databaseURL: "https://elequipe.firebaseio.com",
+            projectId: "elequipe",
+            storageBucket: "elequipe.appspot.com",
+            messagingSenderId: "366233755932",
+            appId: "1:366233755932:web:78ae514f5db647c9169ad9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        var userList = document.getElementById('userList');
+        firebase.database().ref('users').on('value', function (snapshot) {
+            userList.innerHTML = '';
+            snapshot.forEach(function (item) {
+                var li = document.createElement('li');
+                li.appendChild(document.createTextNode(item.val().nome + ': ' + item.val().telefone));
+                userList.appendChild(li);
+            })
+        })
+    </script>
+
+</body>
+
+</html>
