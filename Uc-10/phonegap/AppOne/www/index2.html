@@ -13,9 +13,15 @@
     <div id="lugares">
 
     </div>
+    <form action="#" id="criar">
+        <input type="text" id="lugar" placeholder="Lugar: " required>
+        <input type="text" id="lon" placeholder="Longitude: " required>
+        <input type="text" id="lat" placeholder="Latitude: " required>
+        <input type="text" id="uf" placeholder="UF: " required>
+        <button type="submit" id="add">Add</button>
+    </form>
 
-    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
+
 
     <style>
         * {
@@ -25,39 +31,71 @@
             box-sizing: border-box;
         }
 
+        body {
+            background-color: #202020;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0px 20px;
+        }
+
         h3 {
             text-align: center;
             padding: 10px;
             background-color: tomato;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
         }
 
         #lugares {
             width: 100%;
-            height: 100vh;
+            height: auto;
             background-color: #202020;
-            padding: 20px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            overflow-x: scroll;
+            padding-top: 100px;
         }
 
         .item {
             width: 100%;
-            display: flex;
             background-color: rgb(255, 255, 255);
-            margin-bottom: 20px;
+            margin-right: 20px;
             padding: 25px 5px 0px 10px;
-            display: flex;
-            flex-direction: column;
         }
 
         .item P {
             margin-bottom: 10px;
             border-bottom: 2px solid tomato;
         }
-    </style>
 
+        form {
+            width: 100%;
+            padding: 20px;
+            background-color: #202020;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+
+        form input {
+            margin-bottom: 2px;
+            padding: 5px 20px;
+            border-radius: 3px;
+        }
+
+        form button {
+            padding: 10px;
+            border-radius: 3px;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
     <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
@@ -73,6 +111,7 @@
         firebase.initializeApp(firebaseConfig);
 
         var ulLugares = document.getElementById('lugares');
+
         firebase.database().ref('lugares').on('value', function (res) {
             ulLugares.innerHTML = '';
             res.forEach((element, index) => {
@@ -80,22 +119,44 @@
                 var nome = element.val().nome;
                 var latitude = element.val().latitude;
                 var longitude = element.val().longitude;
+                var uf = element.val().uf;
 
                 var html = `
                     <div class="item">
                         <p><strong>Nome:</strong> ${nome}</p>
                         <p><strong>Latitude:</strong> ${latitude}</p>
                         <p><strong>Longitude:</strong> ${longitude}</p>
+                        <p><strong>Uf:</strong> ${uf}</p>
                     </div>
-                    
                 `;
                 ulLugares.insertAdjacentHTML('afterbegin', html);
-
-                /*var li = document.createElement('li');
-                li.appendChild(document.createTextNode('nome: ' + element.val().nome + ': . Longitude: ' + element.val().longitude + '. Latitude: ' + element.val().latitude));
-                ulLugares.appendChild(li);*/
             });
         })
+
+        const formLugares = document.getElementById("criar");
+        const addLugar = document.getElementById("add");
+
+        addLugar.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            var nomeLugar = document.querySelector("#lugar").value;
+            var lonLugar = document.querySelector("#lon").value;
+            var latLugar = document.querySelector("#lat").value;
+            var ufLugar = document.querySelector("#uf").value;
+
+            var data = {
+                nome: nomeLugar,
+                latitude: latLugar,
+                longitude: lonLugar,
+                uf: ufLugar
+            }
+
+            formLugares.reset();
+
+            var db = firebase.database().ref('lugares');
+            db.push(data);
+        })
+
     </script>
 
 </body>

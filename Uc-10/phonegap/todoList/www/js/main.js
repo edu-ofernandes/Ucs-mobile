@@ -12,7 +12,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const formCriar = document.getElementById("criar");
-var counter = new Date().getTime();
 const tarefaHtml = document.querySelector('.tarefas');
 
 formCriar.addEventListener("submit", (e) => {
@@ -22,20 +21,16 @@ formCriar.addEventListener("submit", (e) => {
   formCriar.reset();
 
   var tarefaObj = {
-    id: counter,
     nomeTarefa: nomeTarefa,
     descricaoTarefa: descricaoTarefa
   };
 
-  criarTarefa(tarefaObj, counter);
+  criarTarefa(tarefaObj);
 })
 
-function criarTarefa(tarefaObj, counter) {
-  console.log(counter)
-  counter += 1;
-  console.log(counter)
-  let db = firebase.database().ref(`tarefas/${counter}`);
-  db.set(tarefaObj);
+function criarTarefa(tarefaObj) {
+  let db = firebase.database().ref("tarefas");
+  db.push(tarefaObj);
 
   tarefaHtml.innerHTML = '';
   lerTarefa();
@@ -48,17 +43,28 @@ function lerTarefa() {
     tarefaHtml.innerHTML = '';
     dado.forEach((element) => {
       var tarefaValor = element.val();
+      var key = element.key;
       tarefaHtml.innerHTML += `
       <div class="tarefa">
         <p id="nomeTarefa">${tarefaValor.nomeTarefa}</p>
         <p id="descricaoTarefa">${tarefaValor.descricaoTarefa}</p>
         <div class="botoes">
-          <button id="alterar" data-id="${tarefaValor.id}"><i class="far fa-edit"></i></button>
-          <button id="deletar" data-id="${tarefaValor.id}"><i class="far fa-trash-alt"></i></button>
+          <button id="alterar" onclick="updateTarefa(${key})"><i class="far fa-edit"></i></button>
+          <button id="deletar" onclick="deletarTarefa(${key})"><i class="far fa-trash-alt"></i></deletartton>
         </div>
       </div>
     `;
     })
 
   })
+}
+
+const btnUpdate = document.querySelector("#alterar");
+const btnDeletar = document.querySelector("#deletar");
+
+function updateTarefa(id) {
+  console.log(id)
+}
+function deletarTarefa(id) {
+  alert("teste delete")
 }

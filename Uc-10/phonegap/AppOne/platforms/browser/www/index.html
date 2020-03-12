@@ -20,13 +20,14 @@
     <h1>Acessando dados</h1>
     <ul id="userList"></ul>
     <a href="./index2.html">Lugares</a>
+    <form action="#" id="criar" style="display: flex; justify-content: center; flex-direction: column;">
+        <input type="text" id="nome" placeholder="Nome: "> <br>
+        <input type="number" id="telefone" placeholder="Tel: "> <br>
+        <button type="submit" id="addUser">Adicionar</button>
+    </form>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
 
     <script>
         // Your web app's Firebase configuration
@@ -50,7 +51,28 @@
                 li.appendChild(document.createTextNode(item.val().nome + ': ' + item.val().telefone));
                 userList.appendChild(li);
             })
-        })
+        });
+
+        var addUser = document.getElementById("addUser");
+        var formCriar = document.getElementById("criar");
+        addUser.addEventListener("click", function (e) {
+            var nome = document.getElementById("nome").value;
+            var telefone = document.getElementById("telefone").value;
+            e.preventDefault();
+            formCriar.reset();
+            criarUser(nome, telefone);
+        });
+
+        function criarUser(nome, telefone) {
+            var data = {
+                nome: nome,
+                telefone: telefone
+            }
+
+            var db = firebase.database().ref("users");
+            db.push(data);
+        }
+
     </script>
 
 </body>
