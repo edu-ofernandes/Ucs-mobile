@@ -1,0 +1,2 @@
+rootProject.name='Frases para voce'
+include ':app'

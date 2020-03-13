@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Frases para voce</string>
+    <string-array name="categoria_dados">
+        <item>Selecion uma das categorias</item>
+        <item>Motivacionais</item>
+        <item>Engraçada</item>
+        <item>Romantica</item>
+        <item>Pensamento</item>
+        <item>Filosófica</item>
+        <item>Reflexão</item>
+    </string-array>
+</resources>
