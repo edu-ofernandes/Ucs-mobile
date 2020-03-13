@@ -22,7 +22,8 @@ formCriar.addEventListener("submit", (e) => {
 
   var tarefaObj = {
     nomeTarefa: nomeTarefa,
-    descricaoTarefa: descricaoTarefa
+    descricaoTarefa: descricaoTarefa,
+    id: firebase.database().ref('tarefas').on('value').key
   };
 
   criarTarefa(tarefaObj);
@@ -43,14 +44,14 @@ function lerTarefa() {
     tarefaHtml.innerHTML = '';
     dado.forEach((element) => {
       var tarefaValor = element.val();
-      var key = element.key;
+      var id = element.key;
       tarefaHtml.innerHTML += `
       <div class="tarefa">
         <p id="nomeTarefa">${tarefaValor.nomeTarefa}</p>
         <p id="descricaoTarefa">${tarefaValor.descricaoTarefa}</p>
         <div class="botoes">
-          <button id="alterar" onclick="updateTarefa(${key})"><i class="far fa-edit"></i></button>
-          <button id="deletar" onclick="deletarTarefa(${key})"><i class="far fa-trash-alt"></i></deletartton>
+          <button id="alterar" onclick="alterarTarefa()" data-id="${id}"><i class="far fa-edit"></i></button>
+          <button id="deletar" onclick="deletarTarefa()" data-id="${id}"><i class="far fa-trash-alt"></i></deletartton>
         </div>
       </div>
     `;
@@ -61,10 +62,9 @@ function lerTarefa() {
 
 const btnUpdate = document.querySelector("#alterar");
 const btnDeletar = document.querySelector("#deletar");
-
-function updateTarefa(id) {
+function alterarTarefa(id) {
   console.log(id)
 }
 function deletarTarefa(id) {
-  alert("teste delete")
+  console.log(id)
 }
