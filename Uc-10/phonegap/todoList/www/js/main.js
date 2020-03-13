@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 const formCriar = document.getElementById("criar");
 const tarefaHtml = document.querySelector('.tarefas');
-
+//usar onclick em vez de eventListener
 formCriar.addEventListener("submit", (e) => {
   var nomeTarefa = formCriar.querySelector("#nomeTarefaText").value;
   var descricaoTarefa = formCriar.querySelector("#descricaoTarefaText").value;
