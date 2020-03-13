@@ -13,19 +13,20 @@ firebase.initializeApp(firebaseConfig);
 
 const formCriar = document.getElementById("criar");
 const tarefaHtml = document.querySelector('.tarefas');
+const btnAddTarefa = document.querySelector('#addTarefa');
+let counter = new Date().getTime();
 //usar onclick em vez de eventListener
 formCriar.addEventListener("submit", (e) => {
   var nomeTarefa = formCriar.querySelector("#nomeTarefaText").value;
   var descricaoTarefa = formCriar.querySelector("#descricaoTarefaText").value;
   e.preventDefault();
   formCriar.reset();
-
   var tarefaObj = {
     nomeTarefa: nomeTarefa,
     descricaoTarefa: descricaoTarefa,
-    id: firebase.database().ref('tarefas').on('value').key
+    id: counter
   };
-
+  counter = new Date().getTime();
   criarTarefa(tarefaObj);
 })
 
@@ -38,20 +39,26 @@ function criarTarefa(tarefaObj) {
 
 }
 
+function alterarTarefa(id) {
+  console.log('alterar' + id)
+}
+function deletarTarefa(id) {
+  console.log('deletar' + id)
+}
+
 function lerTarefa() {
   var tarefa = firebase.database().ref('tarefas/');
   tarefa.on('value', (dado) => {
     tarefaHtml.innerHTML = '';
     dado.forEach((element) => {
       var tarefaValor = element.val();
-      var id = element.key;
       tarefaHtml.innerHTML += `
       <div class="tarefa">
         <p id="nomeTarefa">${tarefaValor.nomeTarefa}</p>
         <p id="descricaoTarefa">${tarefaValor.descricaoTarefa}</p>
         <div class="botoes">
-          <button id="alterar" onclick="alterarTarefa()" data-id="${id}"><i class="far fa-edit"></i></button>
-          <button id="deletar" onclick="deletarTarefa()" data-id="${id}"><i class="far fa-trash-alt"></i></deletartton>
+          <button id="alterar" onclick="alterarTarefa(${tarefaValor.id})" data-id="${tarefaValor.id}"><i class="far fa-edit"></i></button>
+          <button id="deletar" onclick="deletarTarefa(${tarefaValor.id})" data-id="${tarefaValor.id}"><i class="far fa-trash-alt"></i></deletartton>
         </div>
       </div>
     `;
@@ -60,11 +67,3 @@ function lerTarefa() {
   })
 }
 
-const btnUpdate = document.querySelector("#alterar");
-const btnDeletar = document.querySelector("#deletar");
-function alterarTarefa(id) {
-  console.log(id)
-}
-function deletarTarefa(id) {
-  console.log(id)
-}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "561767808136",
+    "firebase_url": "https://frases-para-voce.firebaseio.com",
+    "project_id": "frases-para-voce",
+    "storage_bucket": "frases-para-voce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561767808136:android:07d4246e0f457aaf75333d",
+        "android_client_info": {
+          "package_name": "com.example.frasesparavoce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561767808136-qqhhn5cbb6aochu28paqveh2qipn3e8s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwuaU4hDbCqn4AGtRLuHFF76jXmzXyKkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561767808136-qqhhn5cbb6aochu28paqveh2qipn3e8s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

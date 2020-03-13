@@ -45,5 +45,13 @@
             android:layout_height="wrap_content"
             android:entries="@array/categoria_dados"
             android:spinnerMode="dropdown" />
+
+        <Button
+            android:id="@+id/btAddFrase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="addFrase"
+            android:text="add frase" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
