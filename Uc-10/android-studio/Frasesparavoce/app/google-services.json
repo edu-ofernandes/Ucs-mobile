@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "561767808136-4u7rhsavb2b93q6jnuq61j8dc7si8bkf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.frasesparavoce",
+            "certificate_hash": "f2f67f4f2e7f8ad6975dc517012b03e6f74da05f"
+          }
+        },
+        {
           "client_id": "561767808136-qqhhn5cbb6aochu28paqveh2qipn3e8s.apps.googleusercontent.com",
           "client_type": 3
         }

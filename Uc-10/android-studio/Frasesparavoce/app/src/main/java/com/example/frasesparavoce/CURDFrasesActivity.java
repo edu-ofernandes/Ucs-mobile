@@ -1,6 +1,10 @@
 package com.example.frasesparavoce;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,20 +12,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class CURDFrasesActivity extends AppCompatActivity {
+import java.util.UUID;
+
+public class CURDFrasesActivity<fraseListener> extends AppCompatActivity {
 
     FirebaseDatabase database;
-    DatabaseReference myRef;
+    DatabaseReference reference;
+
+    RecyclerViewAdapter adapter;
 
     EditText etTexto;
     EditText etAutor;
     Spinner spCategoria;
+    String counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +43,36 @@ public class CURDFrasesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_crud_frases);
 
         iniciariViews();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
+        startBanco();
+
+        RecyclerView recyclerView = findViewById(R.id.rcFrasesRecycler);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+        
+        lerDados();
+    }
+
+    private void lerDados() {
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Frase fraseItem;
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    public void startBanco(){
+        FirebaseApp.initializeApp(CURDFrasesActivity.this);
+        database = FirebaseDatabase.getInstance();
+        database.setPersistenceEnabled(true);
+        reference = database.getReference();
     }
 
     @Override
@@ -39,24 +81,19 @@ public class CURDFrasesActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public void addFrase(View v){
-        String fraseNome  = etTexto.getText().toString();
-        String autorNome = etAutor.getText().toString();
-        String categoriaNome = "teste";
-
-//        Frase frase = new Frase(fraseNome, autorNome, categoriaNome, "1");
-        myRef.child("tarefas").child("nome").setValue(fraseNome);
-        myRef.child("tarefas").child("autor").setValue(autorNome);
-        myRef.child("tarefas").child("categoria").setValue(categoriaNome);
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
 
         if(id == R.id.menu_new){
-            Toast.makeText(this, "Create", Toast.LENGTH_LONG).show();
-            myRef.setValue("Hello, World!");
+            startBanco();
+            String fraseNome  = etTexto.getText().toString();
+            String autorNome = etAutor.getText().toString();
+            String categoriaNome = (String)spCategoria.getSelectedItem();
+            Frase frase = new Frase(fraseNome, autorNome, categoriaNome, counter);
+            reference.child("frases").child(frase.getId()).setValue(frase);
+
+            iniciariViews();
         }
 
         if(id == R.id.menu_update){
@@ -78,9 +115,14 @@ public class CURDFrasesActivity extends AppCompatActivity {
         etAutor = findViewById(R.id.etAutor);
         etTexto = findViewById(R.id.etTexto);
         spCategoria = findViewById(R.id.spCategoria);
+        counter = UUID.randomUUID().toString();
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categoria_dados, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+            R.array.categoria_dados, android.R.layout.simple_spinner_item);
         spCategoria.setAdapter(adapter);
 
+        etAutor.setText("");
+        etTexto.setText("");
     }
+
 }

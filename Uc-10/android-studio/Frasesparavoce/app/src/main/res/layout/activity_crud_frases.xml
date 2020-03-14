@@ -46,12 +46,11 @@
             android:entries="@array/categoria_dados"
             android:spinnerMode="dropdown" />
 
-        <Button
-            android:id="@+id/btAddFrase"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcFrasesRecycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:onClick="addFrase"
-            android:text="add frase" />
+            android:layout_marginTop="30dp" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
