@@ -1,6 +1,3 @@
-const btnPedido = document.querySelectorAll('.itens .info .btnMain');
-const itensHtml = document.querySelectorAll('.itens');
-
 const lanche = [
   {
     nome: "Nome da comida1",
@@ -124,21 +121,58 @@ const lanche = [
   },
 ];
 
+const divContainer = document.querySelector('.container');
 
-itensHtml.forEach((item, index) => {
-  let imgHtml = item.querySelector('img');
-  let h3Html = item.querySelector('h3');
-  let h5Html = item.querySelector('h5');
+const refDatabase = firebase.database().ref().child('restaurante').child('cardapio');
+
+function inicializarDados() {
+  refDatabase.once('value', (snapShot) => {
+
+    snapShot.forEach((element, index) => {
+      const dados = element.val();
+
+      const divItens = document.createElement('div');
+      divItens.classList.add('itens');
+
+      const imgPrato = document.createElement('img');
+
+      const divInfo = document.createElement('div');
+      divInfo.classList.add('info');
+
+      const h3Titulo = document.createElement('h3');
+      let textoH3Titulo = null;
+      const h5Descricao = document.createElement('h5');
+      let textoH5Descricao = null;
+
+      const btnPedido = document.createElement('button');
+      btnPedido.classList.add('btnMain');
+
+      let textoBtnPedido = document.createTextNode('Pedir');
+      btnPedido.appendChild(textoBtnPedido);
+      btnPedido.onclick = function () { window.location.assign('itemInfo.html?id=' + element.key) };
 
 
-  imgHtml.setAttribute('src', lanche[index].foto[0]);
-  h3Html.insertAdjacentText('afterbegin', lanche[index].nome);
-  h5Html.insertAdjacentText('afterbegin', lanche[index].descricao);
-  btnPedido[index].setAttribute('data-idLanche', lanche[index].id);
-});
+      textoH3Titulo = document.createTextNode(dados.nome);
+      textoH5Descricao = document.createTextNode(dados.descricao);
 
-function irParaPedido(e) {
-  window.location.assign('itemInfo.html?id=' + e.getAttribute('data-idLanche'));
+      h3Titulo.appendChild(textoH3Titulo);
+      h5Descricao.appendChild(textoH5Descricao);
+
+      divInfo.insertAdjacentElement('beforeend', h3Titulo);
+      divInfo.insertAdjacentElement('beforeend', h5Descricao);
+      divInfo.insertAdjacentElement('beforeend', btnPedido);
+
+      imgPrato.setAttribute('src', dados.foto.foto01);
+      imgPrato.setAttribute('alt', dados.descricao);
+
+      divItens.insertAdjacentElement('beforeend', imgPrato);
+      divItens.insertAdjacentElement('beforeend', divInfo);
+      divContainer.insertAdjacentElement('beforeend', divItens);
+    });
+  })
 }
+window.onload = inicializarDados();
+
+
 
 

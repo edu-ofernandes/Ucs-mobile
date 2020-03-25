@@ -1,36 +1,25 @@
 package com.example.frasesparavoce;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.UUID;
 
-public class CURDFrasesActivity<fraseListener> extends AppCompatActivity {
+public class CURDFrasesActivity extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference reference;
-
-    RecyclerViewAdapter adapter;
 
     EditText etTexto;
     EditText etAutor;
@@ -45,27 +34,6 @@ public class CURDFrasesActivity<fraseListener> extends AppCompatActivity {
         iniciariViews();
         startBanco();
 
-        RecyclerView recyclerView = findViewById(R.id.rcFrasesRecycler);
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-        
-        lerDados();
-    }
-
-    private void lerDados() {
-
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Frase fraseItem;
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
 
     public void startBanco(){

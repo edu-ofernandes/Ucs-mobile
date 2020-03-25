@@ -14,9 +14,14 @@ firebase.initializeApp(firebaseConfig);
 const formCriar = document.getElementById("criar");
 const tarefaHtml = document.querySelector('.tarefas');
 const btnAddTarefa = document.querySelector('#addTarefa');
-let counter = new Date().getTime();
-//usar onclick em vez de eventListener
-formCriar.addEventListener("submit", (e) => {
+let counter = null;
+
+
+lerTarefa();
+
+btnAddTarefa.addEventListener("click", (e) => {
+  counter = firebase.database().ref().child('tarefas').push().key;
+
   var nomeTarefa = formCriar.querySelector("#nomeTarefaText").value;
   var descricaoTarefa = formCriar.querySelector("#descricaoTarefaText").value;
   e.preventDefault();
@@ -26,28 +31,11 @@ formCriar.addEventListener("submit", (e) => {
     descricaoTarefa: descricaoTarefa,
     id: counter
   };
-  counter = new Date().getTime();
-  criarTarefa(tarefaObj);
+  criarTarefa(tarefaObj, counter);
 })
 
-function criarTarefa(tarefaObj) {
-  let db = firebase.database().ref("tarefas");
-  db.push(tarefaObj);
-
-  tarefaHtml.innerHTML = '';
-  lerTarefa();
-
-}
-
-function alterarTarefa(id) {
-  console.log('alterar' + id)
-}
-function deletarTarefa(id) {
-  console.log('deletar' + id)
-}
-
 function lerTarefa() {
-  var tarefa = firebase.database().ref('tarefas/');
+  var tarefa = firebase.database().ref(`tarefas/`);
   tarefa.on('value', (dado) => {
     tarefaHtml.innerHTML = '';
     dado.forEach((element) => {
@@ -57,13 +45,37 @@ function lerTarefa() {
         <p id="nomeTarefa">${tarefaValor.nomeTarefa}</p>
         <p id="descricaoTarefa">${tarefaValor.descricaoTarefa}</p>
         <div class="botoes">
-          <button id="alterar" onclick="alterarTarefa(${tarefaValor.id})" data-id="${tarefaValor.id}"><i class="far fa-edit"></i></button>
-          <button id="deletar" onclick="deletarTarefa(${tarefaValor.id})" data-id="${tarefaValor.id}"><i class="far fa-trash-alt"></i></deletartton>
+          <button id="alterar" onclick="alterarTarefa()" data-id="${tarefaValor.id}"><i class="far fa-edit"></i></button>
+          <button id="deletar" onclick="deletarTarefa()" data-id="${tarefaValor.id}"><i class="far fa-trash-alt"></i></deletartton>
         </div>
       </div>
     `;
     })
-
   })
 }
+
+function criarTarefa(tarefaObj, id) {
+  let db = firebase.database().ref("tarefas/" + id);
+  db.set(tarefaObj);
+
+  tarefaHtml.innerHTML = '';
+  lerTarefa();
+}
+
+
+
+const btnDeletar = document.querySelector('#deletar');
+
+function alterarTarefa(id) {
+  alert(`teste ${id}`)
+}
+function deletarTarefa(id) {
+  console.log(id)
+  let itemRef = firebase.database().ref("tarefas").child(id);
+  itemRef.remove()
+    .then(function () { alert('deu certo baraalhooooo') })
+    .catch(function () { alert('deu errado baraalhooooo') });
+}
+
+
 
