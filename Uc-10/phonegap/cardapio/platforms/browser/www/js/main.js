@@ -164,6 +164,7 @@ function inicializarDados() {
 
       imgPrato.setAttribute('src', dados.foto.foto01);
       imgPrato.setAttribute('alt', dados.descricao);
+      imgPrato.setAttribute('title', dados.descricao);
 
       divItens.insertAdjacentElement('beforeend', imgPrato);
       divItens.insertAdjacentElement('beforeend', divInfo);

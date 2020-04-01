@@ -21,8 +21,9 @@ refDatabase.once('value', (snapShot) => {
   nomePedido.insertAdjacentText('afterbegin', lanche.nome);
   descricaoPedido.insertAdjacentText('afterbegin', lanche.descricao);
   precoPedido.insertAdjacentText('beforeend', lanche.preco);
-  fotoPedido.setAttribute('src', lanche.foto[0]);
+  fotoPedido.setAttribute('src', lanche.foto.foto01);
   fotoPedido.setAttribute('alt', lanche.descricao);
+  fotoPedido.setAttribute('title', lanche.descricao);
   btnAddPedido.insertAdjacentText('beforeend', lanche.preco);
   qtdPedidoHtml.innerHTML = qtdPedido;
 })
