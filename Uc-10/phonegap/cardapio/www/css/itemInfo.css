@@ -1,0 +1,57 @@
+.container-item {
+  height: 100vh;
+  padding: 20px;
+}
+
+.item {
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--cor7);
+  padding: 20px;
+  border-radius: 3px;
+}
+
+.item>img {
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+}
+
+.item .info-item {
+  width: 100%;
+  margin-top: 15px;
+  color: var(--cor9);
+}
+
+.info-item .botoes {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.info-item .botoes .qtd {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--cor6);
+  border-radius: 3px;
+  color: var(--cor9);
+}
+
+.info-item .botoes button#addPedido {
+  background-color: var(--cor6);
+  padding: 10px;
+  border-radius: 3px;
+  color: var(--cor9);
+}
+
+.item textarea{
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+}

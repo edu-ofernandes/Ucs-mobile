@@ -1,0 +1,22 @@
+.splash {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--cor5);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.splash #logo {
+  width: 200px;
+}
+.splash h1{
+  margin: 20px 0px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFA11A;
+}

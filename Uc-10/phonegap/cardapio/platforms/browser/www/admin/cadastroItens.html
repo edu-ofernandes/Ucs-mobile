@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Cadastro de itens</title>
+
+  <link rel="stylesheet" href="./css/geral.css">
+  <link rel="stylesheet" href="./css/cadastroItens.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./fontawesome-free-5.11.2-web/css/all.min.css">
+</head>
+<body>
+  <div class="container container-addItens">
+    <div class="header"><p>Adicione itens ao cardapio</p></div>
+    <form action="#" id="addItens">
+      <input type="text" class="" id="nome" name="nome" placeholder="Nome:">
+      <input type="text" class="" id="descricao" name="descricao" placeholder="Descricao">
+      <input type="number" class="" id="estoque" name="estoque" placeholder="Estoque">
+      <input type="number" class="" id="preco" name="preco" placeholder="Preço">
+      <div class="foto-group">
+        <input type="file" class="" id="foto" name="foto" placeholder="Insira uma foto" >
+        <p>Seleciona alguma foto:</p>
+        <div class="previewFoto"><img src="./img/burger.jpg" alt=""></div>
+        <label for="foto" class="hover"><i class="fas fa-camera"></i></label>
+        <label for="foto" class="hover"><i class="fas fa-image"></i></label>
+      </div>
+      <button class="hover" type="submit">Confirmar</button>
+      <button class="hover" type="reset">Cancelar</button>
+    </form>
+
+    <div class="footer">
+      <a href="">All <i class="fas fa-utensils"></i></a>
+    </div>
+  </div>
+</body>
+</html>

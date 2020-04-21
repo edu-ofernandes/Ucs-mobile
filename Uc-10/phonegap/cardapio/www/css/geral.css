@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor1: #e2f3f5;
+  --cor2: #22d1ee;
+  --cor3: #3d5af1;
+  --cor4: #0e153a;
+  --cor5: #4d4d4d;
+  --cor6: #c26e1a;
+  --cor7: #2e2e2e;
+  --cor8: #1f1f1f;
+  --cor9: #dbdbdb;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button, input {
+  border: none;
+  outline: 0;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.container {
+  z-index: 1;
+  background-color: var(--cor5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 70px 0px;
+}
+
+.hover:active{
+  transform: scale(1.011);
+  opacity: .8;
+  transition: all .1s linear;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--cor7);
+  width: 100%;
+}
+.header .menu {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.header .menu>div {
+  display: flex;
+  justify-content: space-around;
+  width: 100px;
+}
+
+.header .menu>h2, p {
+  color: var(--cor9);
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  left: 0;
+  bottom: 0px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--cor7);
+}
+
+button#login, button#cadastrar, button#logout {
+  background-color: var(--cor6);
+  border-radius: 5px;
+  color: var(--cor9);
+  font-size: 1.1em;
+  width: 100px;
+  padding: 7px 0px;
+  margin: 0 auto;
+}

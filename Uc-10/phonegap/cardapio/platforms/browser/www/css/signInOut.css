@@ -1,0 +1,65 @@
+.container-entrar-cadastrar {
+  background-color: var(--cor7);
+  min-height: 100vh;
+  padding: 0px;
+  justify-content: center;
+}
+.logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.logo span{
+  margin: 20px 0px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFA11A;
+}
+
+
+.container-entrar-cadastrar form {
+  width: 80%;
+  max-width: 500px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-entrar-cadastrar form input {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  padding: 5px 5px 5px 10px;
+  background-color: rgb(212, 212, 212);
+}
+
+.container-entrar-cadastrar form button {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  color: var(--cor9);
+  font-weight: bold;
+}
+
+.container-entrar-cadastrar form button.entrar, button.cadastrar {
+  background-color: rgb(51, 161, 51);
+}
+
+.container-entrar-cadastrar form button.pular {
+  background-color: #FFA11A;
+}
+
+.redes-sociais{
+  width: 100%;
+  height: auto;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.redes-sociais i{color: #FFA11A;}

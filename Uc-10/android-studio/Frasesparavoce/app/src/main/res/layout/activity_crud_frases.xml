@@ -29,7 +29,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Autor"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textAlignment="viewStart" />
 
         <EditText
             android:id="@+id/etTexto"
@@ -47,7 +48,7 @@
             android:spinnerMode="dropdown" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcFrasesRecycler"
+            android:id="@+id/rvFrasesRecycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp" />
