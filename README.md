@@ -1,2 +1,2 @@
 # Ucs-mobile
-Ucs para novo semestre(mobile) do curso Tec. Info. Internet Senac
+Ucs (Unidades Curriculares) para novo semestre(mobile) do curso Tec. Info. Internet Senac
